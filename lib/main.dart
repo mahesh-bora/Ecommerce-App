@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/screens/setting_page.dart';
+import 'package:ecommerce_app/screens/login%20&%20onboarding/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,12 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'E-commerce App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SettingPage(),
+      // home: SettingPage(),
+      home: SplashScreen(),
     );
   }
 }
