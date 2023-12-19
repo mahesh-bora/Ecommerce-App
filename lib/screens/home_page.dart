@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             _currentIndex = index;
           });
         },
-        children: const [
+        children: [
           // Add your pages here
           Placeholder(), // Home Page
           Placeholder(), // Notification Page

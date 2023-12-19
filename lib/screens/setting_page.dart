@@ -16,6 +16,8 @@ class SettingPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+
+            //user profile
             const SizedBox(
               height: 150,
               width: 150,
@@ -23,6 +25,8 @@ class SettingPage extends StatelessWidget {
                 radius: 50,
               ),
             ),
+
+            //user details
             const SizedBox(height: 30),
             Container(
               height: 100,
@@ -81,17 +85,25 @@ class SettingPage extends StatelessWidget {
                 ],
               ),
             ),
+
+            //buttons
             const SizedBox(height: 30),
-            CustomButton(title: 'Address'),
+            CustomButton(title: 'Address', navigateToRoute: '/address'),
+
             const SizedBox(height: 10),
-            CustomButton(title: 'Wishlist'),
+            CustomButton(title: 'Wishlist', navigateToRoute: '/wishlist'),
+
             const SizedBox(height: 10),
-            CustomButton(title: 'Payment'),
+            CustomButton(title: 'Payment', navigateToRoute: '/payment'),
+
             const SizedBox(height: 10),
-            CustomButton(title: 'Help'),
+            CustomButton(title: 'Help', navigateToRoute: '/help'),
+
             const SizedBox(height: 10),
-            CustomButton(title: 'Support'),
+            CustomButton(title: 'Support', navigateToRoute: '/support'),
+
             const SizedBox(height: 10),
+            //sign out button
             TextButton(
               onPressed: () {},
               child: const Text(

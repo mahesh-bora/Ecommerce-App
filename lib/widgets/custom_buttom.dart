@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton({super.key, required this.title});
+  CustomButton({super.key, required this.title, required this.navigateToRoute});
 
   String title;
+  final String navigateToRoute;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,7 @@ class CustomButton extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 10.0),
               child: Text(
+                //title of the button
                 title,
                 style: TextStyle(
                   fontSize: 18,
@@ -28,7 +30,10 @@ class CustomButton extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                //Navigate to next screen
+                Navigator.pushNamed(context, navigateToRoute);
+              },
               icon: const Icon(
                 Icons.navigate_next_outlined,
               ),

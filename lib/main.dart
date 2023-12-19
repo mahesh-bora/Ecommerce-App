@@ -1,4 +1,9 @@
+import 'package:ecommerce_app/screens/address_page.dart';
+import 'package:ecommerce_app/screens/help_page.dart';
 import 'package:ecommerce_app/screens/home_page.dart';
+import 'package:ecommerce_app/screens/payment_page.dart';
+import 'package:ecommerce_app/screens/support_page.dart';
+import 'package:ecommerce_app/screens/wishlist_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +22,16 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomePage(),
+      // home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/address': (context) => AddressScreen(),
+        '/wishlist': (context) => WishlistScreen(),
+        '/payment': (context) => PaymentScreen(),
+        '/help': (context) => HelpScreen(),
+        '/support': (context) => SupportScreen(),
+      },
     );
   }
 }
