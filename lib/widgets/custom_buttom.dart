@@ -1,36 +1,39 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
+  CustomButton({super.key, required this.title});
+
+  String title;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: CupertinoColors.systemGrey6,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: CupertinoButton(
-        onPressed: () {},
-        padding: EdgeInsets.zero,
+        height: 60,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.grey[200],
+        ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(
-              CupertinoIcons.add,
-              color: CupertinoColors.black,
-            ),
-            const SizedBox(width: 8),
-            Text(
-              'Add to cart',
-              style: TextStyle(
-                color: CupertinoColors.black,
-                fontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0),
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontSize: 18,
+                ),
               ),
             ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.navigate_next_outlined,
+              ),
+            )
           ],
-        ),
-      ),
-    );
+        ));
   }
 }

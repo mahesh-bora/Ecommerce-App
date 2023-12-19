@@ -2,7 +2,7 @@ import 'package:ecommerce_app/screens/setting_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             _currentIndex = index;
           });
         },
-        children: [
+        children: const [
           // Add your pages here
           Placeholder(), // Home Page
           Placeholder(), // Notification Page
