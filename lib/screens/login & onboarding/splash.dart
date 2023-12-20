@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     // Wait for 5 seconds and then navigate to the next screen
     Timer(
-      Duration(seconds: 3),
+      Duration(seconds: 2),
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => signInScreen()),

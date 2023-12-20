@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/screens/login%20&%20onboarding/forgot_password.dart';
+import 'package:ecommerce_app/screens/login%20&%20onboarding/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class CreateAccountScreen extends StatefulWidget {
@@ -129,13 +130,21 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     Radius.circular(100.0), // Adjust the radius as needed
                   ),
                   color: Color(0xFF8e6dee)),
-              child: Center(
-                child: Text(
-                  "Continue",
-                  style: TextStyle(
-                    fontFamily: 'CircularStd-Bold',
-                    color: Colors.white,
-                    fontSize: 20.0,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => signInScreen()),
+                  );
+                },
+                child: Center(
+                  child: Text(
+                    "Continue",
+                    style: TextStyle(
+                      fontFamily: 'CircularStd-Bold',
+                      color: Colors.white,
+                      fontSize: 20.0,
+                    ),
                   ),
                 ),
               ),

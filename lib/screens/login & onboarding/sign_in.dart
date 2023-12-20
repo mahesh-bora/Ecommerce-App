@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/screens/login%20&%20onboarding/final_login.dart';
+import 'package:ecommerce_app/screens/login%20&%20onboarding/password_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'create_account.dart';
@@ -16,241 +16,247 @@ class _signInScreenState extends State<signInScreen> {
     return SafeArea(
         child: Scaffold(
       backgroundColor: Color(0xFF201C2C),
-      body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 100,
-            ),
-            Container(
-              child: Text(
-                "Sign In",
-                style: TextStyle(
-                  fontFamily: 'CircularStd-Bold.ttf',
-                  color: Colors.white,
-                  fontSize: 40.0,
-                ),
+      body: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.symmetric(horizontal: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 100,
               ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Flexible(
+              Positioned(
                 child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF342F3F), // Set the background color here
-                borderRadius: BorderRadius.circular(4),
-              ),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Email Address",
-                  hintText: "Email Address",
-                  hintStyle: TextStyle(
-                      color: Color.fromRGBO(
-                          255, 255, 255, 0.5)), // White with opacity 0.5
-                  labelStyle:
-                      TextStyle(color: Color.fromRGBO(255, 255, 255, 0.5)),
-                  // errorText: "Please Fill the input"),
-                ),
-              ),
-            )),
-            SizedBox(
-              height: 35,
-            ),
-            Container(
-              height: 45,
-              decoration: const BoxDecoration(
-                  border: Border.symmetric(),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(100.0), // Adjust the radius as needed
-                  ),
-                  color: Color(0xFF8e6dee)),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => FinalLogin()),
-                  );
-                },
-                child: Center(
                   child: Text(
-                    "Continue",
+                    "Sign In",
                     style: TextStyle(
-                      fontFamily: 'CircularStd-Bold',
+                      fontFamily: 'CircularStd-Bold.ttf',
                       color: Colors.white,
-                      fontSize: 20.0,
+                      fontSize: 40.0,
                     ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            Row(
-              children: [
-                Container(
-                  child: Text(
-                    "Dont have an Account ?",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontFamily: 'Circular Std',
-                      fontWeight: FontWeight.w400,
-                      height: 0,
-                      letterSpacing: -0.41,
-                    ),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  color: Color(0xFF342F3F), // Set the background color here
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: "Email Address",
+                    hintText: "Email Address",
+                    hintStyle: TextStyle(
+                        color: Color.fromRGBO(
+                            255, 255, 255, 0.5)), // White with opacity 0.5
+                    labelStyle:
+                        TextStyle(color: Color.fromRGBO(255, 255, 255, 0.5)),
+                    // errorText: "Please Fill the input"),
                   ),
                 ),
-                SizedBox(
-                  width: 5,
-                ),
-                Container(
-                  child: GestureDetector(
-                    onTap: () {
-                      // Navigate to the CreateAccountScreen when tapped
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => CreateAccountScreen()),
-                      );
-                    },
+              ),
+              SizedBox(
+                height: 45,
+              ),
+              Container(
+                height: 45,
+                decoration: const BoxDecoration(
+                    border: Border.symmetric(),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(100.0), // Adjust the radius as needed
+                    ),
+                    color: Color(0xFF8e6dee)),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PasswordScreen()),
+                    );
+                  },
+                  child: Center(
                     child: Text(
-                      "Create One Here",
+                      "Continue",
+                      style: TextStyle(
+                        fontFamily: 'CircularStd-Bold',
+                        color: Colors.white,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Row(
+                children: [
+                  Container(
+                    child: Text(
+                      "Dont have an Account ?",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,
                         fontFamily: 'Circular Std',
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w400,
                         height: 0,
                         letterSpacing: -0.41,
                       ),
                     ),
                   ),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 60,
-            ),
-            Container(
-              height: 45,
-              padding: EdgeInsets.symmetric(
-                  horizontal: 16.0), // Adjust the horizontal padding as needed
-              decoration: BoxDecoration(
-                color: Color(0xFF342F3F),
-                borderRadius:
-                    BorderRadius.circular(100.0), // Adjust the radius as needed
-              ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    height: 30,
-                    width: 30,
-                    "assets/appleLogo.png",
-                    alignment: Alignment.centerLeft,
-                    fit: BoxFit.contain,
-                  ),
                   SizedBox(
-                      width:
-                          16.0), // Adjust the width of the space between the logo and text
-                  Expanded(
-                    child: Center(
+                    width: 5,
+                  ),
+                  Container(
+                    child: GestureDetector(
+                      onTap: () {
+                        // Navigate to the CreateAccountScreen when tapped
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CreateAccountScreen()),
+                        );
+                      },
                       child: Text(
-                        "Continue With Apple",
+                        "Create One Here",
                         style: TextStyle(
-                          fontFamily: 'CircularStd-Bold',
                           color: Colors.white,
-                          fontSize: 20.0,
+                          fontSize: 15,
+                          fontFamily: 'Circular Std',
+                          fontWeight: FontWeight.bold,
+                          height: 0,
+                          letterSpacing: -0.41,
                         ),
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            Container(
-              height: 45,
-              padding: EdgeInsets.symmetric(
-                  horizontal: 16.0), // Adjust the horizontal padding as needed
-              decoration: BoxDecoration(
-                color: Color(0xFF342F3F),
-                borderRadius:
-                    BorderRadius.circular(100.0), // Adjust the radius as needed
+              SizedBox(
+                height: 60,
               ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    height: 30,
-                    width: 30,
-                    "assets/googleLogo.png",
-                    alignment: Alignment.centerLeft,
-                    fit: BoxFit.contain,
-                  ),
-                  SizedBox(
-                      width:
-                          16.0), // Adjust the width of the space between the logo and text
-                  Expanded(
-                    child: Center(
-                      child: Text(
-                        "Continue With Google",
-                        style: TextStyle(
-                          fontFamily: 'CircularStd-Bold',
-                          color: Colors.white,
-                          fontSize: 20.0,
+              Container(
+                height: 45,
+                padding: EdgeInsets.symmetric(
+                    horizontal:
+                        16.0), // Adjust the horizontal padding as needed
+                decoration: BoxDecoration(
+                  color: Color(0xFF342F3F),
+                  borderRadius: BorderRadius.circular(
+                      100.0), // Adjust the radius as needed
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      height: 30,
+                      width: 30,
+                      "assets/appleLogo.png",
+                      alignment: Alignment.centerLeft,
+                      fit: BoxFit.contain,
+                    ),
+                    SizedBox(
+                        width:
+                            16.0), // Adjust the width of the space between the logo and text
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          "Continue With Apple",
+                          style: TextStyle(
+                            fontFamily: 'CircularStd-Bold',
+                            color: Colors.white,
+                            fontSize: 20.0,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SizedBox(
-              height: 25,
-            ),
-            Container(
-              height: 45,
-              padding: EdgeInsets.symmetric(
-                  horizontal: 16.0), // Adjust the horizontal padding as needed
-              decoration: BoxDecoration(
-                color: Color(0xFF342F3F),
-                borderRadius:
-                    BorderRadius.circular(100.0), // Adjust the radius as needed
+              SizedBox(
+                height: 25,
               ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    height: 30,
-                    width: 30,
-                    "assets/facebookLogo.png",
-                    alignment: Alignment.centerLeft,
-                    fit: BoxFit.contain,
-                  ),
-                  SizedBox(
-                      width:
-                          16.0), // Adjust the width of the space between the logo and text
-                  Expanded(
-                    child: Center(
-                      child: Text(
-                        "Continue With Facebook",
-                        style: TextStyle(
-                          fontFamily: 'CircularStd-Bold',
-                          color: Colors.white,
-                          fontSize: 20.0,
+              Container(
+                height: 45,
+                padding: EdgeInsets.symmetric(
+                    horizontal:
+                        16.0), // Adjust the horizontal padding as needed
+                decoration: BoxDecoration(
+                  color: Color(0xFF342F3F),
+                  borderRadius: BorderRadius.circular(
+                      100.0), // Adjust the radius as needed
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      height: 30,
+                      width: 30,
+                      "assets/googleLogo.png",
+                      alignment: Alignment.centerLeft,
+                      fit: BoxFit.contain,
+                    ),
+                    SizedBox(
+                        width:
+                            16.0), // Adjust the width of the space between the logo and text
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          "Continue With Google",
+                          style: TextStyle(
+                            fontFamily: 'CircularStd-Bold',
+                            color: Colors.white,
+                            fontSize: 20.0,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+              SizedBox(
+                height: 25,
+              ),
+              Container(
+                height: 45,
+                padding: EdgeInsets.symmetric(
+                    horizontal:
+                        16.0), // Adjust the horizontal padding as needed
+                decoration: BoxDecoration(
+                  color: Color(0xFF342F3F),
+                  borderRadius: BorderRadius.circular(
+                      100.0), // Adjust the radius as needed
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      height: 30,
+                      width: 30,
+                      "assets/facebookLogo.png",
+                      alignment: Alignment.centerLeft,
+                      fit: BoxFit.contain,
+                    ),
+                    SizedBox(
+                        width:
+                            16.0), // Adjust the width of the space between the logo and text
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          "Continue With Facebook",
+                          style: TextStyle(
+                            fontFamily: 'CircularStd-Bold',
+                            color: Colors.white,
+                            fontSize: 20.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     ));
