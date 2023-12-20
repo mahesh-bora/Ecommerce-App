@@ -1,3 +1,10 @@
+import 'package:ecommerce_app/routes.dart';
+import 'package:ecommerce_app/screens/setting/address_page.dart';
+import 'package:ecommerce_app/screens/setting/edit_Payment.dart';
+import 'package:ecommerce_app/screens/setting/help_page.dart';
+import 'package:ecommerce_app/screens/setting/payment_page.dart';
+import 'package:ecommerce_app/screens/setting/support_page.dart';
+import 'package:ecommerce_app/screens/setting/wishlist_page.dart';
 import 'package:ecommerce_app/widgets/custom_buttom.dart';
 import 'package:flutter/material.dart';
 
@@ -7,21 +14,21 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.symmetric(
-          horizontal: 20.0, vertical: 15.0),
+      padding: const EdgeInsetsDirectional.symmetric(horizontal: 20.0),
       child: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.06),
 
             //user profile
             const SizedBox(
               height: 150,
               width: 150,
               child: CircleAvatar(
+                backgroundImage: AssetImage('assets/profile.png'),
                 radius: 50,
               ),
             ),
@@ -33,7 +40,7 @@ class SettingPage extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.grey[200],
+                color: const Color(0xFF1D182A),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,7 +55,7 @@ class SettingPage extends StatelessWidget {
                         Text(
                           'John Doe',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),
@@ -56,7 +63,7 @@ class SettingPage extends StatelessWidget {
                         Text(
                           'dummy.user@gmail.com',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontWeight: FontWeight.w400,
                             fontSize: 15,
                           ),
@@ -64,7 +71,7 @@ class SettingPage extends StatelessWidget {
                         Text(
                           '+91 9876543210',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontWeight: FontWeight.w400,
                             fontSize: 15,
                           ),
@@ -79,6 +86,7 @@ class SettingPage extends StatelessWidget {
                       child: const Text(
                         'Edit',
                         style: TextStyle(
+                          color: const Color(0xFF8E6CEF),
                           fontSize: 18,
                         ),
                       )),
@@ -88,19 +96,54 @@ class SettingPage extends StatelessWidget {
 
             //buttons
             const SizedBox(height: 30),
-            CustomButton(title: 'Address', navigateToRoute: '/address'),
+            CustomButton(
+              title: 'Address',
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return AddressScreen();
+                }));
+              },
+            ),
 
             const SizedBox(height: 10),
-            CustomButton(title: 'Wishlist', navigateToRoute: '/wishlist'),
+            CustomButton(
+              title: 'Wishlist',
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return WishlistScreen();
+                }));
+              },
+            ),
 
             const SizedBox(height: 10),
-            CustomButton(title: 'Payment', navigateToRoute: '/payment'),
+            CustomButton(
+              title: 'Payment',
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return PaymentScreen();
+                }));
+              },
+            ),
 
             const SizedBox(height: 10),
-            CustomButton(title: 'Help', navigateToRoute: '/help'),
+            CustomButton(
+              title: 'Help',
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return HelpScreen();
+                }));
+              },
+            ),
 
             const SizedBox(height: 10),
-            CustomButton(title: 'Support', navigateToRoute: '/support'),
+            CustomButton(
+              title: 'Support',
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SupportScreen();
+                }));
+              },
+            ),
 
             const SizedBox(height: 10),
             //sign out button

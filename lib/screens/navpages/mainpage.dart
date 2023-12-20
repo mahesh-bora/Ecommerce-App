@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/screens/home/home_screen.dart';
+import 'package:ecommerce_app/screens/navpages/setting_page.dart';
 import 'package:ecommerce_app/screens/navpages/bookmark.dart';
 import 'package:ecommerce_app/screens/navpages/notification.dart';
-import 'package:ecommerce_app/screens/navpages/profile.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -13,10 +13,10 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List pages = [
-    HomeScreen(),
-    BookmarkScreen(),
-    NotificationScreen(),
-    ProfileScreen()
+    const HomeScreen(),
+    const BookmarkScreen(),
+    const NotificationScreen(),
+    const SettingPage(),
   ];
   int cIndex = 0;
   void onTap(int index) {
@@ -29,10 +29,11 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: const Color(0xFF201C2C),
         body: pages[cIndex],
         bottomNavigationBar: BottomNavigationBar(
           onTap: onTap,
-          backgroundColor: Color(0xFF201C2C),
+          backgroundColor: const Color(0xFF201C2C),
           currentIndex: cIndex,
           selectedFontSize: 0,
           unselectedFontSize: 0,
@@ -41,7 +42,7 @@ class _MainPageState extends State<MainPage> {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           elevation: 0,
-          items: [
+          items: const [
             BottomNavigationBarItem(
                 backgroundColor: Color(0xFF201C2C),
                 label: ("Home"),

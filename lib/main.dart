@@ -1,12 +1,6 @@
+import 'package:flutter/material.dart';
+
 import 'package:ecommerce_app/screens/login%20&%20onboarding/splash.dart';
-
-import 'package:ecommerce_app/screens/address_page.dart';
-import 'package:ecommerce_app/screens/help_page.dart';
-import 'package:ecommerce_app/screens/home_page.dart';
-import 'package:ecommerce_app/screens/payment_page.dart';
-import 'package:ecommerce_app/screens/support_page.dart';
-import 'package:ecommerce_app/screens/wishlist_page.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +19,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: SettingPage(),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
