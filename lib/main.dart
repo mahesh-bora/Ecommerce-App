@@ -1,4 +1,6 @@
 import 'package:ecommerce_app/screens/address_page.dart';
+import 'package:ecommerce_app/screens/edit_address_screen.dart';
+import 'package:ecommerce_app/screens/edit_card.dart';
 import 'package:ecommerce_app/screens/help_page.dart';
 import 'package:ecommerce_app/screens/home_page.dart';
 import 'package:ecommerce_app/screens/payment_page.dart';
@@ -31,6 +33,8 @@ class MyApp extends StatelessWidget {
         '/payment': (context) => PaymentScreen(),
         '/help': (context) => HelpScreen(),
         '/support': (context) => SupportScreen(),
+        '/edit_address': (context) => EditAddressScreen(),
+        '/edit_card': (context) => EditPaymentScreen(),
       },
     );
   }
