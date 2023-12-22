@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/widgets/custom_address_card.dart';
 import 'package:flutter/material.dart';
 
 class AddressScreen extends StatelessWidget {
@@ -6,49 +7,25 @@ class AddressScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Address'),
+        title: const Text('Address'),
       ),
       body: Padding(
         padding: const EdgeInsetsDirectional.symmetric(
             horizontal: 20.0, vertical: 15.0),
-        child: SingleChildScrollView(
-          child: Container(
-            height: 100,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.grey[200],
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                //user details
-                const Padding(
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: Text(
-                    overflow: TextOverflow.visible,
-                    '2715 Ash Dr.San Jose, South Dakota 83475',
-                    style: TextStyle(
-                      color: Colors.black,
-                      //fontSize: 1,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+        child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: 2,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10.0),
+                child: AddressCard(
+                  address: '2715 Ash Dr. San Jose, South Dakota 83475',
+                  onEdit: () {
+                    Navigator.pushNamed(context, '/edit_address');
+                  },
                 ),
-
-                //edit button
-                TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'Edit',
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
-                    )),
-              ],
-            ),
-          ),
-        ),
+              );
+            }),
       ),
     );
   }
