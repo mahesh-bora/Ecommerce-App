@@ -9,11 +9,11 @@ class AddressScreen extends StatelessWidget {
       backgroundColor: const Color(0xFF201C2C),
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: const Color(0xFF201C2C),
         title: const Text(
           'Address',
           style: TextStyle(
-            fontFamily: 'CircularStd-Bold.ttf',
-          ),
+              fontFamily: 'CircularStd-Bold.ttf', color: Colors.white),
         ),
       ),
       body: Padding(

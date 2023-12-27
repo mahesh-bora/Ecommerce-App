@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../navpages/shop_by_category.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -143,16 +141,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   SizedBox(width: 8),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ShopByCategory()),
-                        );
-                      },
-                      child: Text("See All",
-                          style: TextStyle(color: Colors.white))),
+                  // GestureDetector(
+                  //     onTap: () {
+                  //       Navigator.push(
+                  //         context,
+                  //         MaterialPageRoute(
+                  //             builder: (context) => ShopByCategory()),
+                  //       );
+                  //     },
+                  //     child: Text("See All",
+                  //         style: TextStyle(color: Colors.white))),
                 ],
               ),
               const SizedBox(
@@ -184,16 +182,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white)),
                   SizedBox(width: 8),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ShopByCategory()),
-                        );
-                      },
-                      child: Text("See All",
-                          style: TextStyle(color: Colors.white))),
+                  // GestureDetector(
+                  //     onTap: () {
+                  //       Navigator.push(
+                  //         context,
+                  //         MaterialPageRoute(
+                  //             builder: (context) => ShopByCategory()),
+                  //       );
+                  //     },
+                  //     child: Text("See All",
+                  //         style: TextStyle(color: Colors.white))),
                 ],
               ),
               const SizedBox(

@@ -59,6 +59,7 @@ flutter:
      - assets/back_button.png
      - assets/bell.png
      - assets/check_out.png
+     - assets/man2.png
 #     - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
