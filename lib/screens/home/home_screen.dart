@@ -31,13 +31,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFF201C2C),
+        backgroundColor: const Color(0xFF201C2C),
         body: SingleChildScrollView(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Container(
@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       width: 50.0,
                       height: 50.0,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           fit: BoxFit.cover,
@@ -59,18 +59,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       child: Row(
                         children: [
-                          SizedBox(width: 16),
+                          const SizedBox(width: 16),
                           Container(
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              color: Color(0xFF342F3F),
+                              color: const Color(0xFF342F3F),
                               border: Border.all(),
                               borderRadius: BorderRadius.circular(100.0),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                SizedBox(width: 18),
+                                const SizedBox(width: 18),
                                 DropdownButton<String>(
                                   value: selectedGender,
                                   icon: const Icon(Icons.arrow_drop_down),
@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           color: value == selectedGender
                                               ? Colors
                                                   .white // White color for selected item
-                                              : Color(
+                                              : const Color(
                                                   0xFF342F3F), // Default color for other items
                                         ),
                                       ),
@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Container(
                       width: 50.0,
                       height: 50.0,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           fit: BoxFit.cover,
@@ -125,18 +125,18 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              SearchBar(
+              const SearchBar(
                 hintText: "Search here",
                 backgroundColor: Color(0xFF342F3F),
                 iconColor: Colors.white,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Categories",
@@ -155,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(color: Colors.white))),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -174,10 +174,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Top Selling",
@@ -196,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(color: Colors.white))),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -205,13 +205,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
                   separatorBuilder: (context, index) =>
-                      SizedBox(width: 10), // Adjust spacing as needed
+                      const SizedBox(width: 10), // Adjust spacing as needed
                   itemBuilder: (context, index) {
                     return Container(
                       width: 200,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      margin: EdgeInsets.symmetric(vertical: 10),
-                      decoration: BoxDecoration(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      margin: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: const BoxDecoration(
                         color: Color(0xFF342F3F),
                       ),
                       child: Column(
@@ -221,8 +221,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             fit: BoxFit.cover,
                             height: 150,
                           ),
-                          SizedBox(height: 10),
-                          Text(
+                          const SizedBox(height: 10),
+                          const Text(
                             "Men's Harrington Jacket",
                             style: TextStyle(
                               color: Colors.white,
@@ -230,8 +230,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontSize: 18,
                             ),
                           ),
-                          SizedBox(height: 5),
-                          Text(
+                          const SizedBox(height: 5),
+                          const Text(
                             '\$148.0',
                             style: TextStyle(
                               color: Colors.white,
@@ -244,10 +244,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Top Selling",
@@ -257,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text("See All", style: TextStyle(color: Colors.white)),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -266,13 +266,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
                   separatorBuilder: (context, index) =>
-                      SizedBox(width: 10), // Adjust spacing as needed
+                      const SizedBox(width: 10), // Adjust spacing as needed
                   itemBuilder: (context, index) {
                     return Container(
                       width: 200,
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      margin: EdgeInsets.symmetric(vertical: 10),
-                      decoration: BoxDecoration(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      margin: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: const BoxDecoration(
                         color: Color(0xFF342F3F),
                       ),
                       child: Column(
@@ -282,8 +282,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             fit: BoxFit.cover,
                             height: 150,
                           ),
-                          SizedBox(height: 10),
-                          Text(
+                          const SizedBox(height: 10),
+                          const Text(
                             "Men's Harrington Jacket",
                             style: TextStyle(
                               color: Colors.white,
@@ -291,8 +291,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontSize: 18,
                             ),
                           ),
-                          SizedBox(height: 5),
-                          Text(
+                          const SizedBox(height: 5),
+                          const Text(
                             '\$148.0',
                             style: TextStyle(
                               color: Colors.white,
@@ -339,10 +339,10 @@ class SearchBar extends StatelessWidget {
               Icons.search,
               color: iconColor,
             ),
-            SizedBox(width: 8.0),
+            const SizedBox(width: 8.0),
             Expanded(
               child: TextField(
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   hintText: hintText,
                   hintStyle: TextStyle(color: Colors.white.withOpacity(0.7)),

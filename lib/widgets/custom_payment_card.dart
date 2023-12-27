@@ -19,7 +19,7 @@ class CustomPaymentCard extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.grey[200],
+          color: const Color(0xFF1D182A),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,8 +32,9 @@ class CustomPaymentCard extends StatelessWidget {
                 child: Text(
                   cardNumber,
                   style: const TextStyle(
+                    fontFamily: 'CircularStd-Bold.ttf',
                     fontSize: 16,
-                    color: Colors.black,
+                    color: Colors.white,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -44,6 +45,7 @@ class CustomPaymentCard extends StatelessWidget {
             IconButton(
               onPressed: onEdit,
               icon: const Icon(
+                color: Colors.white,
                 Icons.navigate_next_outlined,
                 size: 35,
               ),

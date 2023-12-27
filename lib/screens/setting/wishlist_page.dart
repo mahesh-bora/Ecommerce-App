@@ -1,13 +1,22 @@
+import 'package:ecommerce_app/screens/setting/my_favorite_screen.dart';
 import 'package:ecommerce_app/widgets/custom_wishlist_card.dart';
 import 'package:flutter/material.dart';
 
 class WishlistScreen extends StatelessWidget {
+  const WishlistScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF1D182A),
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Wishlist'),
+        title: const Text(
+          'Wishlist',
+          style: TextStyle(
+            fontFamily: 'CircularStd-Bold.ttf',
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsetsDirectional.symmetric(
@@ -16,19 +25,24 @@ class WishlistScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //User Saved Cards
-            Text('Cards',
+            const Text('Your Wishlist',
                 style: TextStyle(
+                  fontFamily: 'CircularStd-Bold.ttf',
+                  color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 )),
             ListView.builder(
               shrinkWrap: true,
-              itemCount: 2,
+              itemCount: 1,
               itemBuilder: (context, index) {
                 return CustomWishlistCard(
-                  title: '**** 1234',
+                  title: 'My Favourite',
                   onEdit: () {
-                    Navigator.pushNamed(context, '/edit_card');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return FavoriteProductsScreen();
+                    }));
                   },
                 );
               },

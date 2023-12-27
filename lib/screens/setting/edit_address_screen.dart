@@ -1,12 +1,17 @@
+import 'package:ecommerce_app/screens/setting/address_page.dart';
 import 'package:flutter/material.dart';
 
 class EditAddressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF201C2C),
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Add Address'),
+        title: const Text('Add Address',
+            style: TextStyle(
+              fontFamily: 'CircularStd-Bold.ttf',
+            )),
       ),
       body: Padding(
         padding: const EdgeInsetsDirectional.symmetric(
@@ -22,9 +27,12 @@ class EditAddressScreen extends StatelessWidget {
                     //address
                     TextFormField(
                       decoration: InputDecoration(
+                        filled: true,
+                        fillColor: const Color(0xFF1D182A),
                         labelText: 'Address',
                         hintText: 'Enter your address',
                         border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
@@ -34,9 +42,12 @@ class EditAddressScreen extends StatelessWidget {
                     //city
                     TextFormField(
                       decoration: InputDecoration(
+                        filled: true,
+                        fillColor: const Color(0xFF1D182A),
                         labelText: 'City',
                         hintText: 'Enter your city',
                         border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
@@ -51,9 +62,12 @@ class EditAddressScreen extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: TextFormField(
                             decoration: InputDecoration(
+                              filled: true,
+                              fillColor: const Color(0xFF1D182A),
                               labelText: 'State',
                               hintText: 'Enter your state',
                               border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
@@ -65,9 +79,12 @@ class EditAddressScreen extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: TextFormField(
                             decoration: InputDecoration(
+                              filled: true,
+                              fillColor: const Color(0xFF1D182A),
                               labelText: 'Pincode',
                               hintText: 'Enter your pincode',
                               border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
@@ -88,12 +105,14 @@ class EditAddressScreen extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  //Navigate to next screen
-                  Navigator.pushNamed(context, '/address');
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return AddressScreen();
+                  }));
                 },
                 child: const Text(
                   'Save',
                   style: TextStyle(
+                    fontFamily: 'CircularStd-Bold.ttf',
                     fontSize: 18,
                   ),
                 ),

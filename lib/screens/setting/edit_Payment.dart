@@ -4,9 +4,15 @@ class EditPaymentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF201C2C),
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Add Card'),
+        title: const Text(
+          'Add Card',
+          style: TextStyle(
+            fontFamily: 'CircularStd-Bold.ttf',
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsetsDirectional.symmetric(
@@ -21,9 +27,12 @@ class EditPaymentScreen extends StatelessWidget {
                     //card number
                     TextFormField(
                       decoration: InputDecoration(
+                        filled: true,
+                        fillColor: const Color(0xFF1D182A),
                         labelText: 'Card Number',
                         hintText: 'Enter your card number',
                         border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
@@ -38,9 +47,12 @@ class EditPaymentScreen extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: TextFormField(
                             decoration: InputDecoration(
+                              filled: true,
+                              fillColor: const Color(0xFF1D182A),
                               labelText: 'CVV',
                               hintText: 'Enter your CVV',
                               border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
@@ -52,9 +64,12 @@ class EditPaymentScreen extends StatelessWidget {
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: TextFormField(
                             decoration: InputDecoration(
+                              filled: true,
+                              fillColor: const Color(0xFF1D182A),
                               labelText: 'Exp',
                               hintText: 'Enter your Expire date',
                               border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
@@ -67,9 +82,12 @@ class EditPaymentScreen extends StatelessWidget {
                     //card holder name
                     TextFormField(
                       decoration: InputDecoration(
+                        filled: true,
+                        fillColor: const Color(0xFF1D182A),
                         labelText: 'Card Holder Name',
                         hintText: 'Enter your card holder name',
                         border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
@@ -93,6 +111,7 @@ class EditPaymentScreen extends StatelessWidget {
                 child: const Text(
                   'Save',
                   style: TextStyle(
+                    fontFamily: 'CircularStd-Bold.ttf',
                     fontSize: 18,
                   ),
                 ),

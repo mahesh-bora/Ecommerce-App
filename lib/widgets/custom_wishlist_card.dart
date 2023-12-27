@@ -19,7 +19,7 @@ class CustomWishlistCard extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.grey[200],
+          color: const Color(0xFF1D182A),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -30,21 +30,23 @@ class CustomWishlistCard extends StatelessWidget {
               child: SizedBox(
                 //width: MediaQuery.of(context).size.width * 0.6,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       title,
                       style: const TextStyle(
                         fontSize: 16,
-                        color: Colors.black,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Price: 1000',
-                      style: const TextStyle(
+                      style: TextStyle(
+                        fontFamily: 'CircularStd-Bold.ttf',
                         fontSize: 16,
-                        color: Colors.black,
+                        color: Colors.white,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -57,6 +59,7 @@ class CustomWishlistCard extends StatelessWidget {
             IconButton(
               onPressed: onEdit,
               icon: const Icon(
+                color: Colors.white,
                 Icons.navigate_next_outlined,
                 size: 35,
               ),

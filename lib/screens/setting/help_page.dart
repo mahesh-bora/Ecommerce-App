@@ -4,11 +4,12 @@ class HelpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF1D182A),
       appBar: AppBar(
-        title: Text('Address'),
+        title: Text('Help '),
       ),
       body: Center(
-        child: Text('Address Screen'),
+        child: Text('Help Screen'),
       ),
     );
   }

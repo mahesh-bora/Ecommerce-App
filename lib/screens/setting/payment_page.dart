@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/setting/edit_Payment.dart';
 import 'package:ecommerce_app/widgets/custom_payment_card.dart';
 import 'package:flutter/material.dart';
 
@@ -5,9 +6,15 @@ class PaymentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF201C2C),
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Payment'),
+        title: Text(
+          'Payment',
+          style: TextStyle(
+            fontFamily: 'CircularStd-Bold.ttf',
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsetsDirectional.symmetric(
@@ -18,7 +25,9 @@ class PaymentScreen extends StatelessWidget {
             //User Saved Cards
             Text('Cards',
                 style: TextStyle(
+                  fontFamily: 'CircularStd-Bold.ttf',
                   fontSize: 20,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 )),
             ListView.builder(
@@ -28,7 +37,10 @@ class PaymentScreen extends StatelessWidget {
                 return CustomPaymentCard(
                   cardNumber: '**** 1234',
                   onEdit: () {
-                    Navigator.pushNamed(context, '/edit_card');
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return EditPaymentScreen();
+                    }));
                   },
                 );
               },
@@ -37,6 +49,8 @@ class PaymentScreen extends StatelessWidget {
             //User Online Payment Methods
             Text('Paypal',
                 style: TextStyle(
+                  fontFamily: 'CircularStd-Bold.ttf',
+                  color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 )),
@@ -47,7 +61,10 @@ class PaymentScreen extends StatelessWidget {
                   return CustomPaymentCard(
                     cardNumber: 'User.email@gmail.com',
                     onEdit: () {
-                      Navigator.pushNamed(context, '/edit_card');
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return EditPaymentScreen();
+                      }));
                     },
                   );
                 }),

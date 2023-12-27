@@ -17,7 +17,7 @@ class AddressCard extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.grey[200],
+        color: const Color(0xFF1D182A),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -31,7 +31,8 @@ class AddressCard extends StatelessWidget {
                 address,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                  color: Colors.black,
+                  fontFamily: 'CircularStd-Bold.ttf',
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -44,6 +45,7 @@ class AddressCard extends StatelessWidget {
             child: const Text(
               'Edit',
               style: TextStyle(
+                fontFamily: 'CircularStd-Bold.ttf',
                 fontSize: 18,
               ),
             ),
