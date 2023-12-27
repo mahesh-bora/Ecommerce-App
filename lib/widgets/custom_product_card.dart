@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_app/model/product.dart';
 import 'package:flutter/material.dart';
 
@@ -30,8 +29,8 @@ class ProductCard extends StatelessWidget {
                 ClipRRect(
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(8.0)),
-                    child: CachedNetworkImage(
-                      imageUrl: product.imageUrl,
+                    child: Image.asset(
+                      product.imageUrl,
                       height: 180,
                       width: double.infinity,
                       fit: BoxFit.cover,

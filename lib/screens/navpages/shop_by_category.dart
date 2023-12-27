@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../product_grid.dart';
 
 class ShopByCategory extends StatefulWidget {
-  const ShopByCategory({super.key});
+  ShopByCategory({super.key});
 
   @override
   State<ShopByCategory> createState() => _ShopByCategoryState();

@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/screens/home/home_screen.dart';
-import 'package:ecommerce_app/screens/navpages/setting_page.dart';
 import 'package:ecommerce_app/screens/navpages/bookmark.dart';
 import 'package:ecommerce_app/screens/navpages/notification.dart';
+import 'package:ecommerce_app/screens/navpages/setting_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -16,7 +16,7 @@ class _MainPageState extends State<MainPage> {
     HomeScreen(),
     NotificationScreen(),
     BookmarkScreen(),
-    ProfileScreen()
+    SettingPage()
   ];
   int cIndex = 0;
   void onTap(int index) {

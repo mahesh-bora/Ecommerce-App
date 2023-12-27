@@ -8,12 +8,12 @@ class PaymentScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF201C2C),
       appBar: AppBar(
+        backgroundColor: const Color(0xFF201C2C),
         centerTitle: true,
         title: Text(
           'Payment',
           style: TextStyle(
-            fontFamily: 'CircularStd-Bold.ttf',
-          ),
+              fontFamily: 'CircularStd-Bold.ttf', color: Colors.white),
         ),
       ),
       body: Padding(
