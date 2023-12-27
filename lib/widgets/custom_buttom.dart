@@ -28,6 +28,7 @@ class CustomButton extends StatelessWidget {
             child: Text(
               title,
               style: const TextStyle(
+                fontFamily: 'CircularStd-Bold.ttf',
                 fontSize: 18,
                 color: Colors.white,
               ),

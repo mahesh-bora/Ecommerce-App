@@ -8,7 +8,10 @@ class EditAddressScreen extends StatelessWidget {
       backgroundColor: const Color(0xFF201C2C),
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Add Address'),
+        title: const Text('Add Address',
+            style: TextStyle(
+              fontFamily: 'CircularStd-Bold.ttf',
+            )),
       ),
       body: Padding(
         padding: const EdgeInsetsDirectional.symmetric(
@@ -109,6 +112,7 @@ class EditAddressScreen extends StatelessWidget {
                 child: const Text(
                   'Save',
                   style: TextStyle(
+                    fontFamily: 'CircularStd-Bold.ttf',
                     fontSize: 18,
                   ),
                 ),

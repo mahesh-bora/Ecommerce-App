@@ -31,6 +31,7 @@ class AddressCard extends StatelessWidget {
                 address,
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
+                  fontFamily: 'CircularStd-Bold.ttf',
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -44,6 +45,7 @@ class AddressCard extends StatelessWidget {
             child: const Text(
               'Edit',
               style: TextStyle(
+                fontFamily: 'CircularStd-Bold.ttf',
                 fontSize: 18,
               ),
             ),

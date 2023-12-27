@@ -7,7 +7,12 @@ class EditPaymentScreen extends StatelessWidget {
       backgroundColor: const Color(0xFF201C2C),
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Add Card'),
+        title: const Text(
+          'Add Card',
+          style: TextStyle(
+            fontFamily: 'CircularStd-Bold.ttf',
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsetsDirectional.symmetric(
@@ -106,6 +111,7 @@ class EditPaymentScreen extends StatelessWidget {
                 child: const Text(
                   'Save',
                   style: TextStyle(
+                    fontFamily: 'CircularStd-Bold.ttf',
                     fontSize: 18,
                   ),
                 ),

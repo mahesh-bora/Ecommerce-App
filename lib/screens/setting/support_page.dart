@@ -6,7 +6,12 @@ class SupportScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF1D182A),
       appBar: AppBar(
-        title: Text('Support'),
+        title: Text(
+          'Support',
+          style: TextStyle(
+            fontFamily: 'CircularStd-Bold.ttf',
+          ),
+        ),
       ),
       body: Center(
         child: Text('Support Screen'),

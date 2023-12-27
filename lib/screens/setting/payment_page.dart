@@ -9,7 +9,12 @@ class PaymentScreen extends StatelessWidget {
       backgroundColor: const Color(0xFF201C2C),
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Payment'),
+        title: Text(
+          'Payment',
+          style: TextStyle(
+            fontFamily: 'CircularStd-Bold.ttf',
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsetsDirectional.symmetric(
@@ -20,6 +25,7 @@ class PaymentScreen extends StatelessWidget {
             //User Saved Cards
             Text('Cards',
                 style: TextStyle(
+                  fontFamily: 'CircularStd-Bold.ttf',
                   fontSize: 20,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -43,6 +49,7 @@ class PaymentScreen extends StatelessWidget {
             //User Online Payment Methods
             Text('Paypal',
                 style: TextStyle(
+                  fontFamily: 'CircularStd-Bold.ttf',
                   color: Colors.white,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,

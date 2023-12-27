@@ -1,6 +1,5 @@
-import 'package:ecommerce_app/routes.dart';
 import 'package:ecommerce_app/screens/setting/address_page.dart';
-import 'package:ecommerce_app/screens/setting/edit_Payment.dart';
+
 import 'package:ecommerce_app/screens/setting/help_page.dart';
 import 'package:ecommerce_app/screens/setting/payment_page.dart';
 import 'package:ecommerce_app/screens/setting/support_page.dart';
@@ -55,6 +54,7 @@ class SettingPage extends StatelessWidget {
                         Text(
                           'John Doe',
                           style: TextStyle(
+                            fontFamily: 'CircularStd-Bold.ttf',
                             color: Colors.white,
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -63,6 +63,7 @@ class SettingPage extends StatelessWidget {
                         Text(
                           'dummy.user@gmail.com',
                           style: TextStyle(
+                            fontFamily: 'CircularStd-Bold.ttf',
                             color: Colors.white,
                             fontWeight: FontWeight.w400,
                             fontSize: 15,
@@ -71,6 +72,7 @@ class SettingPage extends StatelessWidget {
                         Text(
                           '+91 9876543210',
                           style: TextStyle(
+                            fontFamily: 'CircularStd-Bold.ttf',
                             color: Colors.white,
                             fontWeight: FontWeight.w400,
                             fontSize: 15,
@@ -86,6 +88,7 @@ class SettingPage extends StatelessWidget {
                       child: const Text(
                         'Edit',
                         style: TextStyle(
+                          fontFamily: 'CircularStd-Bold.ttf',
                           color: const Color(0xFF8E6CEF),
                           fontSize: 18,
                         ),
@@ -152,6 +155,7 @@ class SettingPage extends StatelessWidget {
               child: const Text(
                 'Sign out',
                 style: TextStyle(
+                  fontFamily: 'CircularStd-Bold.ttf',
                   color: Colors.red,
                   fontSize: 18,
                 ),

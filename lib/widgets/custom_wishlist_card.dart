@@ -30,6 +30,7 @@ class CustomWishlistCard extends StatelessWidget {
               child: SizedBox(
                 //width: MediaQuery.of(context).size.width * 0.6,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
@@ -40,9 +41,10 @@ class CustomWishlistCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(
+                    const Text(
                       'Price: 1000',
-                      style: const TextStyle(
+                      style: TextStyle(
+                        fontFamily: 'CircularStd-Bold.ttf',
                         fontSize: 16,
                         color: Colors.white,
                         fontWeight: FontWeight.w400,
