@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/detail/detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -135,29 +136,29 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Categories",
+                  const Text("Categories",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white)),
-                  SizedBox(width: 8),
-                  // GestureDetector(
-                  //     onTap: () {
-                  //       Navigator.push(
-                  //         context,
-                  //         MaterialPageRoute(
-                  //             builder: (context) => ShopByCategory()),
-                  //       );
-                  //     },
-                  //     child: Text("See All",
-                  //         style: TextStyle(color: Colors.white))),
+                  const SizedBox(width: 8),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ShopByCategory()),
+                        );
+                      },
+                      child: const Text("See All",
+                          style: TextStyle(color: Colors.white))),
                 ],
               ),
               const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 height: 80,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -176,29 +177,31 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Top Selling",
+                  const Text("Top Selling",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white)),
-                  SizedBox(width: 8),
-                  // GestureDetector(
-                  //     onTap: () {
-                  //       Navigator.push(
-                  //         context,
-                  //         MaterialPageRoute(
-                  //             builder: (context) => ShopByCategory()),
-                  //       );
-                  //     },
-                  //     child: Text("See All",
-                  //         style: TextStyle(color: Colors.white))),
+
+                  const SizedBox(width: 8),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ShopByCategory()),
+                        );
+                      },
+                      child: const Text("See All",
+                          style: TextStyle(color: Colors.white))),
+
                 ],
               ),
               const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 height: 300,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
@@ -206,38 +209,61 @@ class _HomeScreenState extends State<HomeScreen> {
                   separatorBuilder: (context, index) =>
                       const SizedBox(width: 10), // Adjust spacing as needed
                   itemBuilder: (context, index) {
-                    return Container(
-                      width: 200,
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      decoration: const BoxDecoration(
-                        color: Color(0xFF342F3F),
-                      ),
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            photos[index],
-                            fit: BoxFit.cover,
-                            height: 150,
-                          ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            "Men's Harrington Jacket",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const ProductDetailScreen()),
+                        );
+                      },
+                      child: Card(
+                        color: const Color(0xFF342F3F),
+                        elevation: 4,
+                        child: Column(
+                          children: [
+                            // Image with no bottom rounding
+                            ClipRRect(
+                                borderRadius: const BorderRadius.vertical(
+                                    top: Radius.circular(8.0)),
+                                child: Image.asset(
+                                  photos[index],
+                                  height: 150,
+                                  fit: BoxFit.cover,
+                                )
+                                // Image.network(
+                                //   product.imageUrl,
+                                //   height: 200,
+                                //   width: double.infinity,
+                                //   fit: BoxFit.cover,
+                                // ),
+                                ),
+                            const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Men's Harrington Jacket",
+                                    style: TextStyle(
+                                        fontFamily: 'CircularStd-Bold.ttf',
+                                        color: Colors.white,
+                                        fontSize: 16),
+                                  ),
+                                  Text(
+                                    '\$148.0',
+                                    style: TextStyle(
+                                        fontFamily: 'CircularStd-Bold.ttf',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          const SizedBox(height: 5),
-                          const Text(
-                            '\$148.0',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     );
                   },
@@ -259,7 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 height: 300,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
@@ -267,38 +293,54 @@ class _HomeScreenState extends State<HomeScreen> {
                   separatorBuilder: (context, index) =>
                       const SizedBox(width: 10), // Adjust spacing as needed
                   itemBuilder: (context, index) {
-                    return Container(
-                      width: 200,
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      decoration: const BoxDecoration(
-                        color: Color(0xFF342F3F),
-                      ),
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            photos[index],
-                            fit: BoxFit.cover,
-                            height: 150,
-                          ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            "Men's Harrington Jacket",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
+                    return GestureDetector(
+                      onTap: () {},
+                      child: Card(
+                        color: const Color(0xFF342F3F),
+                        elevation: 4,
+                        child: Column(
+                          children: [
+                            // Image with no bottom rounding
+                            ClipRRect(
+                                borderRadius: const BorderRadius.vertical(
+                                    top: Radius.circular(8.0)),
+                                child: Image.asset(
+                                  photos[index],
+                                  height: 150,
+                                  fit: BoxFit.cover,
+                                )
+                                // Image.network(
+                                //   product.imageUrl,
+                                //   height: 200,
+                                //   width: double.infinity,
+                                //   fit: BoxFit.cover,
+                                // ),
+                                ),
+                            const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Men's Harrington Jacket",
+                                    style: TextStyle(
+                                        fontFamily: 'CircularStd-Bold.ttf',
+                                        color: Colors.white,
+                                        fontSize: 16),
+                                  ),
+                                  Text(
+                                    '\$148.0',
+                                    style: TextStyle(
+                                        fontFamily: 'CircularStd-Bold.ttf',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                          const SizedBox(height: 5),
-                          const Text(
-                            '\$148.0',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     );
                   },
@@ -318,6 +360,7 @@ class SearchBar extends StatelessWidget {
   final Color iconColor;
 
   const SearchBar({
+    super.key,
     required this.hintText,
     required this.backgroundColor,
     required this.iconColor,

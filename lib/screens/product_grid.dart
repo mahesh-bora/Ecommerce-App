@@ -61,12 +61,63 @@ class _ProductGridState extends State<ProductGrid> {
                   scrollDirection: Axis.vertical,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 50,
+                    crossAxisSpacing: 5.0,
                     mainAxisSpacing: 150,
                   ),
-                  itemCount: 3,
+                  itemCount: photos.length,
                   itemBuilder: (context, index) {
-                    return Container(
+                    return GestureDetector(
+                      onTap: () {},
+                      child: Card(
+                        color: const Color(0xFF342F3F),
+                        elevation: 4,
+                        child: Column(
+                          children: [
+                            // Image with no bottom rounding
+                            ClipRRect(
+                                borderRadius: const BorderRadius.vertical(
+                                    top: Radius.circular(8.0)),
+                                child: Image.asset(
+                                  photos[index],
+                                  //  height: 10,
+                                  fit: BoxFit.cover,
+                                )
+                                // Image.network(
+                                //   product.imageUrl,
+                                //   height: 200,
+                                //   width: double.infinity,
+                                //   fit: BoxFit.cover,
+                                // ),
+                                ),
+                            const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Men's Harrington Jacket",
+                                    style: TextStyle(
+                                        fontFamily: 'CircularStd-Bold.ttf',
+                                        color: Colors.white,
+                                        fontSize: 16),
+                                  ),
+                                  Text(
+                                    '\$148.0',
+                                    style: TextStyle(
+                                        fontFamily: 'CircularStd-Bold.ttf',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+
+                    /*Container(
                       width: 200,
                       padding: EdgeInsets.symmetric(horizontal: 10),
                       margin: EdgeInsets.symmetric(vertical: 10),
@@ -99,7 +150,7 @@ class _ProductGridState extends State<ProductGrid> {
                           ),
                         ],
                       ),
-                    );
+                    );*/
                   },
                 ),
               ),
