@@ -1,8 +1,6 @@
 import 'package:ecommerce_app/screens/detail/detail_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../navpages/shop_by_category.dart';
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -74,6 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 const SizedBox(width: 18),
                                 DropdownButton<String>(
                                   value: selectedGender,
+                                  dropdownColor: const Color(0xFF342F3F),
                                   icon: const Icon(Icons.arrow_drop_down),
                                   iconSize: 24,
                                   elevation: 16,
@@ -99,8 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           color: value == selectedGender
                                               ? Colors
                                                   .white // White color for selected item
-                                              : const Color(
-                                                  0xFF342F3F), // Default color for other items
+                                              : Colors
+                                                  .white, // Default color for other items
                                         ),
                                       ),
                                     );
@@ -184,6 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   const Text("Top Selling",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white)),
+
                   const SizedBox(width: 8),
                   GestureDetector(
                       onTap: () {
@@ -195,6 +195,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                       child: const Text("See All",
                           style: TextStyle(color: Colors.white))),
+
                 ],
               ),
               const SizedBox(

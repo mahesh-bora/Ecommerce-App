@@ -24,7 +24,9 @@ class _FavoriteProductsScreenState extends State<FavoriteProductsScreen> {
       isFavorite: true,
     ),
     Product(
+
       imageUrl: 'assets/man1.png',
+
       title: 'Product 3',
       price: 250,
       isFavorite: true,

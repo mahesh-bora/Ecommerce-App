@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/screens/home/home_screen.dart';
-import 'package:ecommerce_app/screens/navpages/setting_page.dart';
 import 'package:ecommerce_app/screens/navpages/bookmark.dart';
 import 'package:ecommerce_app/screens/navpages/notification.dart';
+import 'package:ecommerce_app/screens/navpages/setting_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
