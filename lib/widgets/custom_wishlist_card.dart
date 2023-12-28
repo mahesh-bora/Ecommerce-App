@@ -24,7 +24,6 @@ class CustomWishlistCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // User details
             Padding(
               padding: const EdgeInsets.only(left: 20.0),
               child: SizedBox(

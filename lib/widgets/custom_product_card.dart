@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_app/model/product.dart';
 import 'package:flutter/material.dart';
 
@@ -30,8 +29,8 @@ class ProductCard extends StatelessWidget {
                 ClipRRect(
                     borderRadius:
                         const BorderRadius.vertical(top: Radius.circular(8.0)),
-                    child: CachedNetworkImage(
-                      imageUrl: product.imageUrl,
+                    child: Image.asset(
+                      product.imageUrl,
                       height: 180,
                       width: double.infinity,
                       fit: BoxFit.cover,
@@ -86,72 +85,5 @@ class ProductCard extends StatelessWidget {
         ),
       ),
     );
-
-    //   GestureDetector(
-    //   onTap: onTap,
-    //   child: Card(
-    //     color: Color(0xFF342F3F),
-    //     elevation: 4,
-    //     child: Column(
-    //       crossAxisAlignment: CrossAxisAlignment.start,
-    //       children: [
-    //         Stack(
-    //           children: [
-    //             ClipRRect(
-    //               borderRadius:
-    //                   BorderRadius.vertical(top: Radius.circular(8.0)),
-    //               child: Image.network(
-    //                 product.imageUrl,
-    //                 //height: 200,
-    //                 width: double.infinity,
-    //                 fit: BoxFit.cover,
-    //               ),
-    //             ),
-    //             Align(
-    //               alignment: Alignment.topRight,
-    //               child: IconButton(
-    //                 icon: Icon(
-    //                   product.isFavorite
-    //                       ? Icons.favorite
-    //                       : Icons.favorite_border,
-    //                   color: Colors.red,
-    //                 ),
-    //                 onPressed: () {},
-    //                 // Implement favorite button logic here
-    //               ),
-    //             ),
-    //           ],
-    //         ),
-    //         const SizedBox(height: 8),
-    //         Padding(
-    //           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-    //           child: Container(
-    //             child: Column(
-    //               crossAxisAlignment: CrossAxisAlignment.start,
-    //               children: [
-    //                 Text(
-    //                   product.title,
-    //                   style: TextStyle(
-    //                     color: Colors.white,
-    //                     fontSize: 16,
-    //                   ),
-    //                 ),
-    //                 Text(
-    //                   '\$${product.price}',
-    //                   style: TextStyle(
-    //                     fontSize: 16,
-    //                     fontWeight: FontWeight.bold,
-    //                     color: Colors.white,
-    //                   ),
-    //                 ),
-    //               ],
-    //             ),
-    //           ),
-    //         ),
-    //         SizedBox(height: MediaQuery.of(context).padding.bottom),
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
 }

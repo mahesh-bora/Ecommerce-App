@@ -12,21 +12,19 @@ class FavoriteProductsScreen extends StatefulWidget {
 class _FavoriteProductsScreenState extends State<FavoriteProductsScreen> {
   final List<Product> _favoriteProducts = [
     Product(
-      imageUrl:
-          'https://unsplash.com/photos/flatlay-photography-of-wireless-headphones-PDX_a_82obo',
+      imageUrl: 'assets/man1.png',
       title: 'Product 1',
       price: 199,
       isFavorite: true,
     ),
     Product(
-      imageUrl:
-          'https://unsplash.com/photos/flatlay-photography-of-wireless-headphones-PDX_a_82obo',
+      imageUrl: 'assets/slipper.png',
       title: 'Product 2',
       price: 250,
       isFavorite: true,
     ),
     Product(
-      imageUrl: 'https://www.pexels.com/photo/black-fujifilm-dslr-camera-90946',
+      imageUrl: 'assets/man1.png',
       title: 'Product 3',
       price: 250,
       isFavorite: true,

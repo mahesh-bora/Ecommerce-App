@@ -16,7 +16,7 @@ class _MainPageState extends State<MainPage> {
     HomeScreen(),
     NotificationScreen(),
     BookmarkScreen(),
-    ProfileScreen()
+    SettingPage()
   ];
   int cIndex = 0;
   void onTap(int index) {
@@ -57,6 +57,5 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
     );
-    ;
   }
 }
