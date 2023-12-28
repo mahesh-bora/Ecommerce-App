@@ -66,6 +66,8 @@ class _FinalLoginState extends State<FinalLogin> {
                     child: Row(
                       children: [
                         Container(
+                          height: 45,
+                          width: 85,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color:
@@ -92,6 +94,8 @@ class _FinalLoginState extends State<FinalLogin> {
                         ),
                         SizedBox(width: 16),
                         Container(
+                          height: 45,
+                          width: 85,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color:
@@ -144,6 +148,8 @@ class _FinalLoginState extends State<FinalLogin> {
                   Container(
                     padding: EdgeInsets.all(16.0),
                     child: DropdownButtonFormField<String>(
+                      dropdownColor: Color(0xFF342F3F),
+                      style: TextStyle(color: Colors.white),
                       value: selectedAge,
                       onChanged: (String? newValue) {
                         setState(() {
