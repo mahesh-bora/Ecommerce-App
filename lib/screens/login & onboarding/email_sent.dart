@@ -7,10 +7,9 @@ class EmailSentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Center(
-          child: Container(
-        decoration: BoxDecoration(color: Color(0xFF201C2C)),
-        child: Column(
+      child: Scaffold(
+        backgroundColor: Color(0xFF201C2C),
+        body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -24,7 +23,7 @@ class EmailSentScreen extends StatelessWidget {
               alignment: Alignment.center,
               child: Center(
                 child: Text(
-                  "We have sent you an email to reset your Password",
+                  "We have sent you an email to reset your Password!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -41,6 +40,7 @@ class EmailSentScreen extends StatelessWidget {
             ),
             Container(
               height: 45,
+              width: 225,
               decoration: const BoxDecoration(
                   border: Border.symmetric(),
                   borderRadius: BorderRadius.all(
@@ -68,7 +68,7 @@ class EmailSentScreen extends StatelessWidget {
             ),
           ],
         ),
-      )),
+      ),
     );
   }
 }

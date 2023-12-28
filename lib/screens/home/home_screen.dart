@@ -71,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 const SizedBox(width: 18),
                                 DropdownButton<String>(
                                   value: selectedGender,
+                                  dropdownColor: const Color(0xFF342F3F),
                                   icon: const Icon(Icons.arrow_drop_down),
                                   iconSize: 24,
                                   elevation: 16,
@@ -96,8 +97,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           color: value == selectedGender
                                               ? Colors
                                                   .white // White color for selected item
-                                              : const Color(
-                                                  0xFF342F3F), // Default color for other items
+                                              : Colors
+                                                  .white, // Default color for other items
                                         ),
                                       ),
                                     );
