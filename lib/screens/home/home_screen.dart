@@ -1,6 +1,8 @@
 import 'package:ecommerce_app/screens/detail/detail_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../navpages/shop_by_category.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -148,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ShopByCategory()),
+                              builder: (context) => ShopByCategory()),
                         );
                       },
                       child: const Text("See All",
@@ -183,19 +185,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   const Text("Top Selling",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white)),
-
                   const SizedBox(width: 8),
                   GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ShopByCategory()),
+                              builder: (context) => S  n 7hopByCategory()),
                         );
                       },
                       child: const Text("See All",
                           style: TextStyle(color: Colors.white))),
-
                 ],
               ),
               const SizedBox(
