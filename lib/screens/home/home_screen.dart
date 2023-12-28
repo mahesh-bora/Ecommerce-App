@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/screens/detail/detail_screen.dart';
+import 'package:ecommerce_app/screens/navpages/setting_page.dart';
 import 'package:flutter/material.dart';
 
 import '../navpages/shop_by_category.dart';
@@ -45,15 +46,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      width: 50.0,
-                      height: 50.0,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage(
-                              'assets/profile.png'), // Replace with your PNG image path
+                    GestureDetector(
+                      onTap: () {
+                        // Handle the tap event, for example, navigate to the profile screen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  SettingPage()), // Replace with your profile screen widget
+                        );
+                      },
+                      child: Container(
+                        width: 50.0,
+                        height: 50.0,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/profile.png'),
+                          ),
                         ),
                       ),
                     ),
@@ -71,7 +82,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const SizedBox(width: 18),
+                                const SizedBox(
+                                  width: 25,
+                                ),
                                 DropdownButton<String>(
                                   value: selectedGender,
                                   dropdownColor: const Color(0xFF342F3F),
@@ -81,9 +94,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   style:
                                       const TextStyle(color: Color(0xFF342F3F)),
                                   underline: Container(
-                                    height: 2,
-                                    // color: Colors.transparent,
-                                  ),
+                                      // height: 1,
+                                      // color: Colors.transparent,
+                                      ),
                                   onChanged: (String? newValue) {
                                     setState(() {
                                       selectedGender = newValue!;
@@ -191,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => S  n 7hopByCategory()),
+                              builder: (context) => ShopByCategory()),
                         );
                       },
                       child: const Text("See All",
@@ -244,6 +257,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  SizedBox(
+                                    height: 30,
+                                  ),
                                   Text(
                                     "Men's Harrington Jacket",
                                     style: TextStyle(
@@ -272,14 +288,23 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Top Selling",
+                  const Text("Top Selling",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white)),
-                  SizedBox(width: 8),
-                  Text("See All", style: TextStyle(color: Colors.white)),
+                  const SizedBox(width: 8),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ShopByCategory()),
+                        );
+                      },
+                      child: const Text("See All",
+                          style: TextStyle(color: Colors.white))),
                 ],
               ),
               const SizedBox(
@@ -321,6 +346,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  SizedBox(
+                                    height: 30,
+                                  ),
                                   Text(
                                     "Men's Harrington Jacket",
                                     style: TextStyle(
