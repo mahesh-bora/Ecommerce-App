@@ -19,6 +19,7 @@ dependencies:
   cached_network_image: ^3.3.0
   carousel_slider: ^4.2.1
   flutter_rating_bar: ^4.0.1
+  iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
@@ -61,7 +62,10 @@ flutter:
      - assets/back_button.png
      - assets/bell.png
      - assets/check_out.png
+     - assets/parcel.png
      - assets/man2.png
+     - assets/shirt.png
+     - assets/successful.png
 #     - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

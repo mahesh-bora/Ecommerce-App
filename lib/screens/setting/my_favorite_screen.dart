@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/model/product.dart';
+import 'package:ecommerce_app/screens/detail/detail_screen.dart';
 import 'package:ecommerce_app/widgets/custom_product_card.dart';
 import 'package:flutter/material.dart';
 
@@ -24,9 +25,7 @@ class _FavoriteProductsScreenState extends State<FavoriteProductsScreen> {
       isFavorite: true,
     ),
     Product(
-
       imageUrl: 'assets/man1.png',
-
       title: 'Product 3',
       price: 250,
       isFavorite: true,
@@ -68,6 +67,11 @@ class _FavoriteProductsScreenState extends State<FavoriteProductsScreen> {
               product: _favoriteProducts[index],
               onTap: () {
                 // Navigate to detail page for selected product
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ProductDetailScreen()),
+                );
               },
             ),
           ),

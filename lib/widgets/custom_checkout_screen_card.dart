@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
-class CustomWishlistCard extends StatelessWidget {
+class CustomCheckoutCard extends StatelessWidget {
   final String title;
+  final String title2;
   final VoidCallback onEdit;
 
-  const CustomWishlistCard({
+  const CustomCheckoutCard({
     Key? key,
     required this.title,
+    required this.title2,
     required this.onEdit,
   }) : super(key: key);
 
@@ -34,19 +36,23 @@ class CustomWishlistCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+                      style: TextStyle(
+                        fontFamily: 'CircularStd-Bold',
+                        color: Colors.white.withOpacity(0.5),
+                        fontSize: 16.0,
                       ),
                     ),
-                    const Text(
-                      'Price: 1000',
-                      style: TextStyle(
-                        fontFamily: 'CircularStd-Bold.ttf',
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      child: Text(
+                        title2,
+                        softWrap: true,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontFamily: 'CircularStd-Bold.ttf',
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ],

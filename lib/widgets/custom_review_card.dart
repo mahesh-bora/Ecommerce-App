@@ -27,18 +27,16 @@ class CustomReviewCard extends StatelessWidget {
               ),
 
               // User name
-              const Text(
-                'Alexa Morgen',
-                style: TextStyle(
-                  fontFamily: 'CircularStd-Bold.ttf',
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: const Text(
+                  'Alexa Morgen',
+                  style: TextStyle(
+                    fontFamily: 'CircularStd-Bold.ttf',
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-
-              const SizedBox(
-                width: 70,
               ),
 
               //star rating
@@ -80,6 +78,7 @@ class CustomReviewCard extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
+
           Text(
             '12days ago',
             style: TextStyle(

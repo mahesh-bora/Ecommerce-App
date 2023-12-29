@@ -17,7 +17,7 @@ class AddressCard extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: const Color(0xFF1D182A),
+        color: const Color(0xFF2B2733),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
