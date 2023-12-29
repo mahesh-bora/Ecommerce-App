@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/screens/detail/detail_screen.dart';
+import 'package:ecommerce_app/screens/navpages/setting_page.dart';
 
 import 'package:flutter/material.dart';
 
