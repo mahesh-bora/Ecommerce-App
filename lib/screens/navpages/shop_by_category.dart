@@ -88,6 +88,9 @@ class _ShopByCategoryState extends State<ShopByCategory> {
                     child: Container(
                       child: Column(
                         children: [
+                          SizedBox(
+                            height: 20,
+                          ),
                           Flexible(
                             child: SizedBox(
                               height:

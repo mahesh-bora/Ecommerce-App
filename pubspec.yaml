@@ -19,6 +19,7 @@ dependencies:
   cached_network_image: ^3.3.0
   carousel_slider: ^4.2.1
   flutter_rating_bar: ^4.0.1
+  iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
