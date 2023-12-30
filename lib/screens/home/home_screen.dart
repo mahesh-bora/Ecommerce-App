@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/screens/detail/detail_screen.dart';
+import 'package:ecommerce_app/screens/navpages/bookmark.dart';
 import 'package:ecommerce_app/screens/navpages/setting_page.dart';
 
 import 'package:flutter/material.dart';
@@ -127,14 +128,23 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    Container(
-                      width: 50.0,
-                      height: 50.0,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage('assets/shopping.png'),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BookmarkScreen()),
+                        );
+                      },
+                      child: Container(
+                        width: 50.0,
+                        height: 50.0,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/shopping.png'),
+                          ),
                         ),
                       ),
                     ),

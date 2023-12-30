@@ -3,6 +3,7 @@ import 'package:ecommerce_app/screens/navpages/bookmark.dart';
 import 'package:ecommerce_app/screens/navpages/notification.dart';
 import 'package:ecommerce_app/screens/navpages/setting_page.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -46,13 +47,13 @@ class _MainPageState extends State<MainPage> {
             BottomNavigationBarItem(
                 backgroundColor: Color(0xFF201C2C),
                 label: ("Home"),
-                icon: Icon(Icons.home)),
+                icon: Icon(Iconsax.home)),
             BottomNavigationBarItem(
-                label: ("Notification"), icon: Icon(Icons.notifications)),
+                label: ("Notification"), icon: Icon(Iconsax.notification)),
             BottomNavigationBarItem(
-                label: ("Bookmark"), icon: Icon(Icons.bookmark)),
+                label: ("Bookmark"), icon: Icon(Iconsax.shopping_cart)),
             BottomNavigationBarItem(
-                label: ("Profile"), icon: Icon(Icons.person)),
+                label: ("Profile"), icon: Icon(Iconsax.user)),
           ],
         ),
       ),
