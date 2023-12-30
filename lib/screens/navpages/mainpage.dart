@@ -14,10 +14,10 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List pages = [
-    HomeScreen(),
-    NotificationScreen(),
-    BookmarkScreen(),
-    SettingPage()
+    const HomeScreen(),
+    const NotificationScreen(),
+    const BookmarkScreen(),
+    const SettingPage()
   ];
   int cIndex = 0;
   void onTap(int index) {
@@ -49,11 +49,17 @@ class _MainPageState extends State<MainPage> {
                 label: ("Home"),
                 icon: Icon(Iconsax.home)),
             BottomNavigationBarItem(
-                label: ("Notification"), icon: Icon(Iconsax.notification)),
+                backgroundColor: Color(0xFF201C2C),
+                label: ("Notification"),
+                icon: Icon(Iconsax.notification)),
             BottomNavigationBarItem(
-                label: ("Bookmark"), icon: Icon(Iconsax.shopping_cart)),
+                backgroundColor: Color(0xFF201C2C),
+                label: ("Bookmark"),
+                icon: Icon(Iconsax.shopping_cart)),
             BottomNavigationBarItem(
-                label: ("Profile"), icon: Icon(Iconsax.user)),
+                backgroundColor: Color(0xFF201C2C),
+                label: ("Profile"),
+                icon: Icon(Iconsax.user)),
           ],
         ),
       ),

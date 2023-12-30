@@ -10,6 +10,7 @@ class WishlistScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF1D182A),
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color(0xFF1D182A),
         centerTitle: true,
         title: const Text(
@@ -41,7 +42,7 @@ class WishlistScreen extends StatelessWidget {
                   onEdit: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return FavoriteProductsScreen();
+                      return const FavoriteProductsScreen();
                     }));
                   },
                 );

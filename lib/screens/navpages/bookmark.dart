@@ -13,40 +13,40 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Color(0xFF201C2C),
+      backgroundColor: const Color(0xFF201C2C),
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           Center(
             child: Container(
-              child: Text("Orders",
+              child: const Text("Orders",
                   style: TextStyle(
                       fontSize: 20,
                       color: Colors.white,
                       fontWeight: FontWeight.bold)),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 200,
           ),
-          Container(
+          SizedBox(
             height: 100,
             width: 100,
             child: Center(
               child: Image.asset("assets/check_out.png"),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Text("No Orders Yet!",
+          const Text("No Orders Yet!",
               style: TextStyle(
                 fontSize: 25,
                 color: Colors.white,
               )),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
@@ -62,10 +62,10 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MainPage()),
+                  MaterialPageRoute(builder: (context) => const MainPage()),
                 );
               },
-              child: Center(
+              child: const Center(
                 child: Text(
                   "Explore Categories",
                   style: TextStyle(

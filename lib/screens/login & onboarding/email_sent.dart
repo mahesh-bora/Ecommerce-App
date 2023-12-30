@@ -8,20 +8,20 @@ class EmailSentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFF201C2C),
+        backgroundColor: const Color(0xFF201C2C),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.3,
               width: MediaQuery.of(context).size.width * 0.3,
-              child: Image(image: AssetImage("assets/email_sent.png")),
+              child: const Image(image: AssetImage("assets/email_sent.png")),
             ),
             Container(
-              padding: EdgeInsets.all(30),
+              padding: const EdgeInsets.all(30),
               alignment: Alignment.center,
-              child: Center(
+              child: const Center(
                 child: Text(
                   "We have sent you an email to reset your Password!",
                   textAlign: TextAlign.center,
@@ -35,7 +35,7 @@ class EmailSentScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -52,10 +52,11 @@ class EmailSentScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => signInScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const SignInScreen()),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     "Return to login",
                     style: TextStyle(
                       fontFamily: 'CircularStd.ttf',
