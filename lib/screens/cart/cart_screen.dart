@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/screens/cart/checkout_screen.dart';
-import 'package:ecommerce_app/screens/navpages/mainpage.dart';
 import 'package:ecommerce_app/widgets/custom_cart_card.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -12,7 +11,7 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  bool _value = false;
+  final bool _value = true;
 
   @override
   Widget build(BuildContext context) {
@@ -31,23 +30,17 @@ class _CartScreenState extends State<CartScreen> {
       backgroundColor: const Color(0xFF201C2C),
       body: _value
           ? Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(
-                  height: 30,
+                const Center(
+                  child: Text("",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold)),
                 ),
-                Center(
-                  child: Container(
-                    child: const Text("Notification",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold)),
-                  ),
-                ),
-                const SizedBox(
-                  height: 200,
-                ),
-                Container(
+                SizedBox(
                   height: 100,
                   width: 100,
                   child: Center(
@@ -76,11 +69,7 @@ class _CartScreenState extends State<CartScreen> {
                       color: Color(0xFF8e6dee)),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MainPage()),
-                      );
+                      Navigator.pop(context);
                     },
                     child: const Center(
                       child: Text(

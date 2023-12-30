@@ -27,8 +27,8 @@ class CustomReviewCard extends StatelessWidget {
               ),
 
               // User name
-              Expanded(
-                child: const Text(
+              const Expanded(
+                child: Text(
                   'Alexa Morgen',
                   style: TextStyle(
                     fontFamily: 'CircularStd-Bold.ttf',
@@ -54,9 +54,7 @@ class CustomReviewCard extends StatelessWidget {
                   Icons.star,
                   color: Color(0xFF8E6CEF),
                 ),
-                onRatingUpdate: (rating) {
-                  print(rating);
-                },
+                onRatingUpdate: (rating) {},
               )
             ],
           ),
@@ -79,7 +77,7 @@ class CustomReviewCard extends StatelessWidget {
             height: 10,
           ),
 
-          Text(
+          const Text(
             '12days ago',
             style: TextStyle(
               fontFamily: 'CircularStd-Bold.ttf',

@@ -1,12 +1,14 @@
-import 'package:ecommerce_app/screens/setting/address_page.dart';
 import 'package:flutter/material.dart';
 
 class EditAddressScreen extends StatelessWidget {
+  const EditAddressScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF201C2C),
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color(0xFF201C2C),
         centerTitle: true,
         title: const Text('Add Address',
@@ -26,10 +28,13 @@ class EditAddressScreen extends StatelessWidget {
 
                     //address
                     TextFormField(
+                      cursorColor: Colors.white,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: const Color(0xFF1D182A),
-                        labelText: 'Address',
+                        fillColor: const Color(0xFF2B2733),
+                        labelText: 'Street Address',
+                        labelStyle:
+                            TextStyle(color: Colors.white.withOpacity(0.5)),
                         hintText: 'Enter your address',
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
@@ -41,10 +46,13 @@ class EditAddressScreen extends StatelessWidget {
 
                     //city
                     TextFormField(
+                      cursorColor: Colors.white,
                       decoration: InputDecoration(
                         filled: true,
-                        fillColor: const Color(0xFF1D182A),
+                        fillColor: const Color(0xFF2B2733),
                         labelText: 'City',
+                        labelStyle:
+                            TextStyle(color: Colors.white.withOpacity(0.5)),
                         hintText: 'Enter your city',
                         border: OutlineInputBorder(
                           borderSide: BorderSide.none,
@@ -61,10 +69,13 @@ class EditAddressScreen extends StatelessWidget {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: TextFormField(
+                            cursorColor: Colors.white,
                             decoration: InputDecoration(
                               filled: true,
-                              fillColor: const Color(0xFF1D182A),
+                              fillColor: const Color(0xFF2B2733),
                               labelText: 'State',
+                              labelStyle: TextStyle(
+                                  color: Colors.white.withOpacity(0.5)),
                               hintText: 'Enter your state',
                               border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
@@ -78,10 +89,13 @@ class EditAddressScreen extends StatelessWidget {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: TextFormField(
+                            cursorColor: Colors.white,
                             decoration: InputDecoration(
                               filled: true,
-                              fillColor: const Color(0xFF1D182A),
+                              fillColor: const Color(0xFF2B2733),
                               labelText: 'Pincode',
+                              labelStyle: TextStyle(
+                                  color: Colors.white.withOpacity(0.5)),
                               hintText: 'Enter your pincode',
                               border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
@@ -104,14 +118,16 @@ class EditAddressScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.05,
               width: double.infinity,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF8E6CEF),
+                ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return AddressScreen();
-                  }));
+                  Navigator.pop(context);
                 },
                 child: const Text(
                   'Save',
                   style: TextStyle(
+                    color: Colors.white,
                     fontFamily: 'CircularStd-Bold.ttf',
                     fontSize: 18,
                   ),

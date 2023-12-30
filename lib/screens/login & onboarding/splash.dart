@@ -17,20 +17,21 @@ class _SplashScreenState extends State<SplashScreen> {
 
     // Wait for 5 seconds and then navigate to the next screen
     Timer(
-      Duration(seconds: 2),
+      const Duration(seconds: 2),
       () => Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => signInScreen()),
+        MaterialPageRoute(builder: (context) => const SignInScreen()),
       ),
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Color(0xFF8e6dee),
+      backgroundColor: const Color(0xFF8e6dee),
       body: Center(
-          child: Container(
+          child: SizedBox(
         height: double.maxFinite,
         width: 200,
         child: Image.asset('assets/AppLogo.png'),

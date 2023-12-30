@@ -3,11 +3,14 @@ import 'package:ecommerce_app/widgets/custom_address_card.dart';
 import 'package:flutter/material.dart';
 
 class AddressScreen extends StatelessWidget {
+  const AddressScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF201C2C),
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         centerTitle: true,
         backgroundColor: const Color(0xFF201C2C),
         title: const Text(
@@ -30,7 +33,7 @@ class AddressScreen extends StatelessWidget {
                   onEdit: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return EditAddressScreen();
+                      return const EditAddressScreen();
                     }));
                   },
                 ),

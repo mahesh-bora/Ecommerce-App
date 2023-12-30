@@ -17,7 +17,7 @@ class SettingPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsetsDirectional.symmetric(horizontal: 20.0),
           child: SingleChildScrollView(
-            physics: const NeverScrollableScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -91,7 +91,7 @@ class SettingPage extends StatelessWidget {
                             'Edit',
                             style: TextStyle(
                               fontFamily: 'CircularStd-Bold.ttf',
-                              color: const Color(0xFF8E6CEF),
+                              color: Color(0xFF8E6CEF),
                               fontSize: 18,
                             ),
                           )),
@@ -106,7 +106,7 @@ class SettingPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return AddressScreen();
+                      return const AddressScreen();
                     }));
                   },
                 ),
@@ -117,7 +117,7 @@ class SettingPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return WishlistScreen();
+                      return const WishlistScreen();
                     }));
                   },
                 ),
@@ -128,7 +128,7 @@ class SettingPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return PaymentScreen();
+                      return const PaymentScreen();
                     }));
                   },
                 ),
@@ -139,7 +139,7 @@ class SettingPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return HelpScreen();
+                      return const HelpScreen();
                     }));
                   },
                 ),
@@ -150,7 +150,7 @@ class SettingPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return SupportScreen();
+                      return const SupportScreen();
                     }));
                   },
                 ),
@@ -162,11 +162,17 @@ class SettingPage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SplashScreen(),
+                          builder: (context) => const SplashScreen(),
                         ));
                   },
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SplashScreen(),
+                          ));
+                    },
                     child: const Text(
                       'Sign out',
                       style: TextStyle(

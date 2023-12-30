@@ -14,17 +14,17 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Color(0xFF201C2C),
+      backgroundColor: const Color(0xFF201C2C),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
-              Text(
+              const Text(
                 "Create Account",
                 style: TextStyle(
                   fontFamily: 'CircularStd-Bold.ttf',
@@ -32,16 +32,16 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   fontSize: 40.0,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFF342F3F),
+                  color: const Color(0xFF342F3F),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "First Name",
                     hintText: "First Name",
@@ -53,16 +53,17 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFF342F3F), // Set the background color here
+                  color:
+                      const Color(0xFF342F3F), // Set the background color here
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Last Name",
                     hintText: "Last Name",
@@ -74,16 +75,17 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFF342F3F), // Set the background color here
+                  color:
+                      const Color(0xFF342F3F), // Set the background color here
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Email Address",
                     hintText: "Email Address",
@@ -95,16 +97,17 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFF342F3F), // Set the background color here
+                  color:
+                      const Color(0xFF342F3F), // Set the background color here
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Password",
                     hintText: "Password",
@@ -116,7 +119,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
               Container(
@@ -131,10 +134,11 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => signInScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const SignInScreen()),
                     );
                   },
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Continue",
                       style: TextStyle(
@@ -146,59 +150,55 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Row(
                 children: [
-                  Container(
-                    child: Text(
-                      "Forgot Password ?",
+                  const Text(
+                    "Forgot Password ?",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontFamily: 'Circular Std',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                      letterSpacing: -0.41,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // Navigate to the CreateAccountScreen when tapped
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ForgotPassword()),
+                      );
+                    },
+                    child: const Text(
+                      "Reset Here!",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,
                         fontFamily: 'Circular Std',
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.bold,
                         height: 0,
                         letterSpacing: -0.41,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Container(
-                    child: GestureDetector(
-                      onTap: () {
-                        // Navigate to the CreateAccountScreen when tapped
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ForgotPassword()),
-                        );
-                      },
-                      child: Text(
-                        "Reset Here!",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontFamily: 'Circular Std',
-                          fontWeight: FontWeight.bold,
-                          height: 0,
-                          letterSpacing: -0.41,
-                        ),
                       ),
                     ),
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 60,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
             ],

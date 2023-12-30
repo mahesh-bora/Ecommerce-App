@@ -1,14 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton({
+  const CustomButton({
     super.key,
     required this.title,
     required this.onPressed,
   });
 
-  String title;
+  final String title;
   final VoidCallback onPressed;
 
   @override

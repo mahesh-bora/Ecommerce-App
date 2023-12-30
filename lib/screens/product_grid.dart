@@ -49,14 +49,12 @@ class _ProductGridState extends State<ProductGrid> {
               const SizedBox(
                 height: 25,
               ),
-              Container(
-                child: const Text(
-                  "Hoodies(240)",
-                  style: TextStyle(
-                    fontFamily: 'CircularStd-Bold.ttf',
-                    color: Colors.white,
-                    fontSize: 25.0,
-                  ),
+              const Text(
+                "Hoodies(240)",
+                style: TextStyle(
+                  fontFamily: 'CircularStd-Bold.ttf',
+                  color: Colors.white,
+                  fontSize: 25.0,
                 ),
               ),
               Expanded(

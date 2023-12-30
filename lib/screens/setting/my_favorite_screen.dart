@@ -39,9 +39,13 @@ class _FavoriteProductsScreenState extends State<FavoriteProductsScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF1D182A),
       appBar: AppBar(
+        centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: const Color(0xFF1D182A),
         title: const Text(
           'Favorites',
           style: TextStyle(
+            color: Colors.white,
             fontFamily: 'CircularStd-Bold.ttf',
           ),
         ),
