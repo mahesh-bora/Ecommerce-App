@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/screens/cart/cart_screen.dart';
 import 'package:ecommerce_app/widgets/custom_review_card.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart'; // Import carousel library
@@ -49,17 +50,21 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               height: 300,
               child: CarouselSlider(
                 items: imgList
-                    .map((item) => Image.asset(item,
-                        height: 500,
-                        fit: BoxFit.cover,
-                        width: MediaQuery.of(context).size.width * 0.8))
+                    .map((item) => Image.asset(
+                          item,
+                          fit: BoxFit.fitHeight,
+                          width: MediaQuery.of(context).size.width * 0.8,
+                        ))
                     .toList(),
                 options: CarouselOptions(
+                  height: 300,
                   autoPlay: true,
                   enlargeCenterPage: true,
                 ),
               ),
             ),
+
+            const SizedBox(height: 20),
 
             // Product title and price
             const Padding(
@@ -383,7 +388,16 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF8E6CEF),
             ),
-            onPressed: () => () {}, // Implement add to cart logic
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const CartScreen();
+                  },
+                ),
+              );
+            }, // Implement add to cart logic
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -431,7 +445,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(width: 50.0),
+                  const SizedBox(width: 50.0),
                   const Text(
                     'Color',
                     style: TextStyle(
@@ -453,7 +467,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
               const SizedBox(height: 20.0),
               // Replace this with your actual color list
-              _buildColorItem(Colors.orange, 'Orange', selectedColor),
+              _buildColorItem(Colors.lime, 'Lemon', selectedColor),
               _buildColorItem(Colors.black, 'Black', selectedColor),
               _buildColorItem(Colors.red, 'Red', selectedColor),
               _buildColorItem(Colors.yellow, 'Yellow', selectedColor),
@@ -519,7 +533,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   }
 
   // Display size picker bottom sheet
-
   void showSizePickerBottomSheet(BuildContext context) {
     String selectedSize = 'S'; // Initialize with a default selection
 
@@ -540,7 +553,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(width: 50.0),
+                      const SizedBox(width: 50.0),
                       const Text(
                         'Color',
                         style: TextStyle(

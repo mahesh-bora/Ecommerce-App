@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/screens/detail/detail_screen.dart';
 import 'package:ecommerce_app/screens/navpages/setting_page.dart';
+
 import 'package:flutter/material.dart';
 
 import '../navpages/shop_by_category.dart';
@@ -319,7 +320,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(width: 10), // Adjust spacing as needed
                   itemBuilder: (context, index) {
                     return GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const ProductDetailScreen()),
+                        );
+                      },
                       child: Card(
                         color: const Color(0xFF342F3F),
                         elevation: 4,
