@@ -37,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         backgroundColor: const Color(0xFF201C2C),
         body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,112 +45,108 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 25,
               ),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        // Handle the tap event, for example, navigate to the profile screen
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  SettingPage()), // Replace with your profile screen widget
-                        );
-                      },
-                      child: Container(
-                        width: 50.0,
-                        height: 50.0,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage('assets/profile.png'),
-                          ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      // Handle the tap event, for example, navigate to the profile screen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const SettingPage()), // Replace with your profile screen widget
+                      );
+                    },
+                    child: Container(
+                      width: 50.0,
+                      height: 50.0,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('assets/profile.png'),
                         ),
                       ),
                     ),
-                    Container(
-                      child: Row(
-                        children: [
-                          const SizedBox(width: 16),
-                          Container(
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFF342F3F),
-                              border: Border.all(),
-                              borderRadius: BorderRadius.circular(100.0),
+                  ),
+                  Row(
+                    children: [
+                      const SizedBox(width: 16),
+                      Container(
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF342F3F),
+                          border: Border.all(),
+                          borderRadius: BorderRadius.circular(100.0),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(
+                              width: 25,
                             ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const SizedBox(
-                                  width: 25,
-                                ),
-                                DropdownButton<String>(
-                                  value: selectedGender,
-                                  dropdownColor: const Color(0xFF342F3F),
-                                  icon: const Icon(Icons.arrow_drop_down),
-                                  iconSize: 24,
-                                  elevation: 16,
-                                  style:
-                                      const TextStyle(color: Color(0xFF342F3F)),
-                                  underline: Container(
-                                      // height: 1,
-                                      // color: Colors.transparent,
-                                      ),
-                                  onChanged: (String? newValue) {
-                                    setState(() {
-                                      selectedGender = newValue!;
-                                    });
-                                  },
-                                  items: <String>['Man', 'Woman']
-                                      .map<DropdownMenuItem<String>>(
-                                          (String value) {
-                                    return DropdownMenuItem<String>(
-                                      value: value,
-                                      child: Text(
-                                        value,
-                                        style: TextStyle(
-                                          color: value == selectedGender
-                                              ? Colors
-                                                  .white // White color for selected item
-                                              : Colors
-                                                  .white, // Default color for other items
-                                        ),
-                                      ),
-                                    );
-                                  }).toList(),
-                                ),
-                              ],
+                            DropdownButton<String>(
+                              value: selectedGender,
+                              dropdownColor: const Color(0xFF342F3F),
+                              icon: const Icon(Icons.arrow_drop_down),
+                              iconSize: 24,
+                              elevation: 16,
+                              style: const TextStyle(color: Color(0xFF342F3F)),
+                              underline: Container(
+                                  // height: 1,
+                                  // color: Colors.transparent,
+                                  ),
+                              onChanged: (String? newValue) {
+                                setState(() {
+                                  selectedGender = newValue!;
+                                });
+                              },
+                              items: <String>[
+                                'Man',
+                                'Woman'
+                              ].map<DropdownMenuItem<String>>((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(
+                                    value,
+                                    style: TextStyle(
+                                      color: value == selectedGender
+                                          ? Colors
+                                              .white // White color for selected item
+                                          : Colors
+                                              .white, // Default color for other items
+                                    ),
+                                  ),
+                                );
+                              }).toList(),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => BookmarkScreen()),
-                        );
-                      },
-                      child: Container(
-                        width: 50.0,
-                        height: 50.0,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage('assets/shopping.png'),
-                          ),
+                    ],
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BookmarkScreen()),
+                      );
+                    },
+                    child: Container(
+                      width: 50.0,
+                      height: 50.0,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('assets/shopping.png'),
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 20,
@@ -187,6 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 80,
                 child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: photoUrls.length,
                   itemBuilder: (context, index) {
@@ -228,6 +226,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 300,
                 child: ListView.separated(
+                  physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
                   separatorBuilder: (context, index) =>
@@ -324,6 +323,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 300,
                 child: ListView.separated(
+                  physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
                   separatorBuilder: (context, index) =>

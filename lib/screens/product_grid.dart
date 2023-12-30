@@ -42,14 +42,14 @@ class _ProductGridState extends State<ProductGrid> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFF201C2C),
+        backgroundColor: const Color(0xFF201C2C),
         body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 GestureDetector(
@@ -59,7 +59,7 @@ class _ProductGridState extends State<ProductGrid> {
                   child: Container(
                     width: 50.0,
                     height: 50.0,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
                         fit: BoxFit.cover,
@@ -68,20 +68,18 @@ class _ProductGridState extends State<ProductGrid> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
-                Container(
-                  child: Text(
-                    "Hoodies(240)",
-                    style: TextStyle(
-                      fontFamily: 'CircularStd-Bold.ttf',
-                      color: Colors.white,
-                      fontSize: 25.0,
-                    ),
+                const Text(
+                  "Hoodies(240)",
+                  style: TextStyle(
+                    fontFamily: 'CircularStd-Bold.ttf',
+                    color: Colors.white,
+                    fontSize: 25.0,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 // Expanded(

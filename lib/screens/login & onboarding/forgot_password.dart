@@ -14,36 +14,34 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Color(0xFF201C2C),
+      backgroundColor: const Color(0xFF201C2C),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10),
+        margin: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
-            Container(
-              child: Text(
-                "Forgot Password",
-                style: TextStyle(
-                  fontFamily: 'CircularStd-Bold.ttf',
-                  color: Colors.white,
-                  fontSize: 40.0,
-                ),
+            const Text(
+              "Forgot Password",
+              style: TextStyle(
+                fontFamily: 'CircularStd-Bold.ttf',
+                color: Colors.white,
+                fontSize: 40.0,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Flexible(
                 child: Container(
               decoration: BoxDecoration(
-                color: Color(0xFF342F3F), // Set the background color here
+                color: const Color(0xFF342F3F), // Set the background color here
                 borderRadius: BorderRadius.circular(4),
               ),
               child: TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "Enter Email Address",
                   hintText: "Enter Email Address",
@@ -56,7 +54,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 ),
               ),
             )),
-            SizedBox(
+            const SizedBox(
               height: 35,
             ),
             Container(
@@ -73,10 +71,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => EmailSentScreen()),
+                          builder: (context) => const EmailSentScreen()),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     "Continue",
                     style: TextStyle(
                       fontFamily: 'CircularStd-Bold',
@@ -87,7 +85,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
           ],

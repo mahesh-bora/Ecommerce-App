@@ -19,36 +19,34 @@ class _FinalLoginState extends State<FinalLogin> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFF201C2C),
+        backgroundColor: const Color(0xFF201C2C),
         body: Column(
           children: [
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 10),
+              margin: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 100,
                   ),
-                  Container(
-                    child: Text(
-                      "Tell Us About Yourself",
-                      style: TextStyle(
-                        fontFamily: 'CircularStd-Bold.ttf',
-                        color: Colors.white,
-                        fontSize: 40.0,
-                      ),
+                  const Text(
+                    "Tell Us About Yourself",
+                    style: TextStyle(
+                      fontFamily: 'CircularStd-Bold.ttf',
+                      color: Colors.white,
+                      fontSize: 40.0,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xFF342F3F),
+                      color: const Color(0xFF342F3F),
                       borderRadius: BorderRadius.circular(4),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Who do you shop for?',
                       style: TextStyle(
                         color: Colors.white,
@@ -59,79 +57,79 @@ class _FinalLoginState extends State<FinalLogin> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
-                  Container(
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 45,
-                          width: 85,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color:
-                                isMan ? Color(0xFF8e6dee) : Color(0xFF342F3F),
-                            border: Border.all(),
-                            borderRadius: BorderRadius.circular(100.0),
-                          ),
-                          child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                isMan = true;
-                              });
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'Man',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
+                  Row(
+                    children: [
+                      Container(
+                        height: 45,
+                        width: 85,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: isMan
+                              ? const Color(0xFF8e6dee)
+                              : const Color(0xFF342F3F),
+                          border: Border.all(),
+                          borderRadius: BorderRadius.circular(100.0),
+                        ),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isMan = true;
+                            });
+                          },
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'Man',
+                              style: TextStyle(
+                                color: Colors.white,
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(width: 16),
-                        Container(
-                          height: 45,
-                          width: 85,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color:
-                                isMan ? Color(0xFF342F3F) : Color(0xFF8e6dee),
-                            border: Border.all(),
-                            borderRadius: BorderRadius.circular(100.0),
-                          ),
-                          child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                isMan = false;
-                              });
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'Woman',
-                                style: TextStyle(
-                                  color: isMan ? Colors.white : Colors.white,
-                                ),
+                      ),
+                      const SizedBox(width: 16),
+                      Container(
+                        height: 45,
+                        width: 85,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: isMan
+                              ? const Color(0xFF342F3F)
+                              : const Color(0xFF8e6dee),
+                          border: Border.all(),
+                          borderRadius: BorderRadius.circular(100.0),
+                        ),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isMan = false;
+                            });
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'Woman',
+                              style: TextStyle(
+                                color: isMan ? Colors.white : Colors.white,
                               ),
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      color: Color(0xFF342F3F),
+                      color: const Color(0xFF342F3F),
                       borderRadius: BorderRadius.circular(4),
                     ),
-                    child: Text(
+                    child: const Text(
                       'How old are you?',
                       style: TextStyle(
                         color: Colors.white,
@@ -142,14 +140,14 @@ class _FinalLoginState extends State<FinalLogin> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: DropdownButtonFormField<String>(
-                      dropdownColor: Color(0xFF342F3F),
-                      style: TextStyle(color: Colors.white),
+                      dropdownColor: const Color(0xFF342F3F),
+                      style: const TextStyle(color: Colors.white),
                       value: selectedAge,
                       onChanged: (String? newValue) {
                         setState(() {
@@ -163,7 +161,7 @@ class _FinalLoginState extends State<FinalLogin> {
                           child: Text(value),
                         );
                       }).toList(),
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Select Age Range',
                         hintText: 'Select Age Range',
                         border: OutlineInputBorder(),
@@ -176,7 +174,7 @@ class _FinalLoginState extends State<FinalLogin> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
                   Container(
@@ -184,16 +182,17 @@ class _FinalLoginState extends State<FinalLogin> {
                     decoration: BoxDecoration(
                       border: Border.all(),
                       borderRadius: BorderRadius.circular(100.0),
-                      color: Color(0xFF8e6dee),
+                      color: const Color(0xFF8e6dee),
                     ),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => MainPage()),
+                          MaterialPageRoute(
+                              builder: (context) => const MainPage()),
                         );
                       },
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "Finish",
                           style: TextStyle(

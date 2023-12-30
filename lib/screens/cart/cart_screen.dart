@@ -12,12 +12,13 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  bool _value = false;
+  final bool _value = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color(0xFF201C2C),
         leading: const BackButton(
           color: Colors.white,
@@ -35,19 +36,17 @@ class _CartScreenState extends State<CartScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                Center(
-                  child: Container(
-                    child: const Text("Notification",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold)),
-                  ),
+                const Center(
+                  child: Text("Notification",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold)),
                 ),
                 const SizedBox(
                   height: 200,
                 ),
-                Container(
+                SizedBox(
                   height: 100,
                   width: 100,
                   child: Center(
@@ -119,7 +118,7 @@ class _CartScreenState extends State<CartScreen> {
                       ),
                       ListView.builder(
                           shrinkWrap: true,
-                          itemCount: 6,
+                          itemCount: 3,
                           itemBuilder: (context, index) {
                             return const CartCard();
                           }),

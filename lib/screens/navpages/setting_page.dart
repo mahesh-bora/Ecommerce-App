@@ -16,6 +16,7 @@ class SettingPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color(0xFF201C2C),
         body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: const EdgeInsetsDirectional.symmetric(horizontal: 20.0),
             child: SingleChildScrollView(

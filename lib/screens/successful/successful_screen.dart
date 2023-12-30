@@ -25,7 +25,7 @@ class SuccessfulScreen extends StatelessWidget {
           ),
           Container(
             decoration: const BoxDecoration(
-              color: const Color(0xFF1D182A),
+              color: Color(0xFF1D182A),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(15),
                 topRight: Radius.circular(15),

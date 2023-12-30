@@ -15,38 +15,37 @@ class _PasswordScreenState extends State<PasswordScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Color(0xFF201C2C),
+      backgroundColor: const Color(0xFF201C2C),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               Positioned(
-                child: Container(
-                  child: Text(
-                    "Sign In",
-                    style: TextStyle(
-                      fontFamily: 'CircularStd-Bold.ttf',
-                      color: Colors.white,
-                      fontSize: 40.0,
-                    ),
+                child: const Text(
+                  "Sign In",
+                  style: TextStyle(
+                    fontFamily: 'CircularStd-Bold.ttf',
+                    color: Colors.white,
+                    fontSize: 40.0,
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: Color(0xFF342F3F), // Set the background color here
+                  color:
+                      const Color(0xFF342F3F), // Set the background color here
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Password",
                     hintText: "Password",
@@ -59,7 +58,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 45,
               ),
               Container(
@@ -74,10 +73,11 @@ class _PasswordScreenState extends State<PasswordScreen> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FinalLogin()),
+                      MaterialPageRoute(
+                          builder: (context) => const FinalLogin()),
                     );
                   },
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "Continue",
                       style: TextStyle(
@@ -89,47 +89,43 @@ class _PasswordScreenState extends State<PasswordScreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Row(
                 children: [
-                  Container(
-                    child: Text(
-                      "Dont have an Account ?",
+                  const Text(
+                    "Dont have an Account ?",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontFamily: 'Circular Std',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                      letterSpacing: -0.41,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // Navigate to the CreateAccountScreen when tapped
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CreateAccountScreen()),
+                      );
+                    },
+                    child: const Text(
+                      "Create One Here",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,
                         fontFamily: 'Circular Std',
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.bold,
                         height: 0,
                         letterSpacing: -0.41,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Container(
-                    child: GestureDetector(
-                      onTap: () {
-                        // Navigate to the CreateAccountScreen when tapped
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CreateAccountScreen()),
-                        );
-                      },
-                      child: Text(
-                        "Create One Here",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontFamily: 'Circular Std',
-                          fontWeight: FontWeight.bold,
-                          height: 0,
-                          letterSpacing: -0.41,
-                        ),
                       ),
                     ),
                   )
