@@ -12,19 +12,22 @@ class _ProductGridState extends State<ProductGrid> {
     'assets/man1.png',
     'assets/slipper.png',
     'assets/man1.png',
+    'assets/man1.png',
+    'assets/slipper.png',
+    'assets/man1.png',
   ];
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFF201C2C),
+        backgroundColor: const Color(0xFF201C2C),
         body: Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               GestureDetector(
@@ -34,7 +37,7 @@ class _ProductGridState extends State<ProductGrid> {
                 child: Container(
                   width: 50.0,
                   height: 50.0,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
                       fit: BoxFit.cover,
@@ -43,11 +46,11 @@ class _ProductGridState extends State<ProductGrid> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Container(
-                child: Text(
+                child: const Text(
                   "Hoodies(240)",
                   style: TextStyle(
                     fontFamily: 'CircularStd-Bold.ttf',
@@ -59,7 +62,7 @@ class _ProductGridState extends State<ProductGrid> {
               Expanded(
                 child: GridView.builder(
                   scrollDirection: Axis.vertical,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 5.0,
                     mainAxisSpacing: 150,
@@ -79,7 +82,7 @@ class _ProductGridState extends State<ProductGrid> {
                                     top: Radius.circular(8.0)),
                                 child: Image.asset(
                                   photos[index],
-                                  //  height: 10,
+                                  height: 150,
                                   fit: BoxFit.cover,
                                 )
                                 // Image.network(

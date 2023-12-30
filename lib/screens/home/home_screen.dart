@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         backgroundColor: const Color(0xFF201C2C),
         body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -177,6 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 80,
                 child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: photoUrls.length,
                   itemBuilder: (context, index) {
@@ -218,6 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 300,
                 child: ListView.separated(
+                  physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
                   separatorBuilder: (context, index) =>
@@ -314,6 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 300,
                 child: ListView.separated(
+                  physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
                   separatorBuilder: (context, index) =>

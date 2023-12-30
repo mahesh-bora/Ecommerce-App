@@ -13,10 +13,10 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   List pages = [
-    HomeScreen(),
-    NotificationScreen(),
-    BookmarkScreen(),
-    SettingPage()
+    const HomeScreen(),
+    const NotificationScreen(),
+    const BookmarkScreen(),
+    const SettingPage()
   ];
   int cIndex = 0;
   void onTap(int index) {
@@ -27,34 +27,40 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
+      backgroundColor: const Color(0xFF201C2C),
+      body: pages[cIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTap,
         backgroundColor: const Color(0xFF201C2C),
-        body: pages[cIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          onTap: onTap,
-          backgroundColor: const Color(0xFF201C2C),
-          currentIndex: cIndex,
-          selectedFontSize: 0,
-          unselectedFontSize: 0,
-          selectedItemColor: Colors.deepPurple,
-          unselectedItemColor: Colors.grey.withOpacity(0.5),
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          elevation: 0,
-          items: const [
-            BottomNavigationBarItem(
-                backgroundColor: Color(0xFF201C2C),
-                label: ("Home"),
-                icon: Icon(Icons.home)),
-            BottomNavigationBarItem(
-                label: ("Notification"), icon: Icon(Icons.notifications)),
-            BottomNavigationBarItem(
-                label: ("Bookmark"), icon: Icon(Icons.bookmark)),
-            BottomNavigationBarItem(
-                label: ("Profile"), icon: Icon(Icons.person)),
-          ],
-        ),
+        currentIndex: cIndex,
+        selectedItemColor: Colors.deepPurple,
+        unselectedItemColor: Colors.grey.withOpacity(0.5),
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        elevation: 0,
+        items: const [
+          BottomNavigationBarItem(
+            backgroundColor: Color(0xFF201C2C),
+            label: ("Home"),
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Color(0xFF201C2C),
+            label: ("Notification"),
+            icon: Icon(Icons.notifications),
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Color(0xFF201C2C),
+            label: ("Bookmark"),
+            icon: Icon(Icons.bookmark),
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Color(0xFF201C2C),
+            label: ("Profile"),
+            icon: Icon(Icons.person),
+          ),
+        ],
       ),
     );
   }
