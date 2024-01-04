@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/screens/detail/detail_screen.dart';
+import 'package:ecommerce_app/screens/navpages/mainpage.dart';
 import 'package:flutter/material.dart';
 
 class SuccessfulScreen extends StatelessWidget {
@@ -67,7 +67,7 @@ class SuccessfulScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return const ProductDetailScreen();
+                            return const MainPage();
                           },
                         ),
                       );

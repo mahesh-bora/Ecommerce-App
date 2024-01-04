@@ -27,8 +27,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF8e6dee),
+        elevation: 0,
+      ),
       backgroundColor: const Color(0xFF8e6dee),
       body: Center(
           child: SizedBox(
@@ -36,6 +39,6 @@ class _SplashScreenState extends State<SplashScreen> {
         width: 200,
         child: Image.asset('assets/AppLogo.png'),
       )),
-    ));
+    );
   }
 }
