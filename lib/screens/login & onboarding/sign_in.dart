@@ -61,10 +61,9 @@ class _SignInScreenState extends State<SignInScreen> {
             const SizedBox(
               height: 45,
             ),
-            // Continue button
             GestureDetector(
               onTap: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                       builder: (context) => const PasswordScreen()),
@@ -90,6 +89,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
             ),
+            // Continue button
+
             const SizedBox(
               height: 25,
             ),
@@ -113,7 +114,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 GestureDetector(
                   onTap: () {
                     // Navigate to the CreateAccountScreen when tapped
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const CreateAccountScreen()),

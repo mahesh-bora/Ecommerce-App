@@ -135,7 +135,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     color: Color(0xFF8e6dee)),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const SignInScreen()),
@@ -175,7 +175,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   GestureDetector(
                     onTap: () {
                       // Navigate to the CreateAccountScreen when tapped
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const ForgotPassword()),

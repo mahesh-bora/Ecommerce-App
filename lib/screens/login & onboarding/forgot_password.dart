@@ -12,8 +12,7 @@ class ForgotPassword extends StatefulWidget {
 class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       backgroundColor: const Color(0xFF201C2C),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -58,24 +57,24 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             const SizedBox(
               height: 35,
             ),
-            Container(
-              height: 45,
-              decoration: const BoxDecoration(
-                  border: Border.symmetric(),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(100.0), // Adjust the radius as needed
-                  ),
-                  color: Color(0xFF8e6dee)),
-              child: Center(
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const EmailSentScreen()),
-                    );
-                  },
-                  child: const Text(
+            GestureDetector(
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const EmailSentScreen()),
+                );
+              },
+              child: Container(
+                height: 45,
+                decoration: const BoxDecoration(
+                    border: Border.symmetric(),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(100.0), // Adjust the radius as needed
+                    ),
+                    color: Color(0xFF8e6dee)),
+                child: const Center(
+                  child: Text(
                     "Continue",
                     style: TextStyle(
                       fontFamily: 'CircularStd-Bold',
@@ -92,6 +91,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           ],
         ),
       ),
-    ));
+    );
   }
 }

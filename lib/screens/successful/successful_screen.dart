@@ -46,7 +46,7 @@ class SuccessfulScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  'You will recieve an email confirmation',
+                  'You will receive an email confirmation',
                   style: TextStyle(
                     fontFamily: 'CircularStd-Bold',
                     color: Colors.white.withOpacity(0.5),
