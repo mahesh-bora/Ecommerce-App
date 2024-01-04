@@ -13,8 +13,11 @@ class PasswordScreen extends StatefulWidget {
 class _PasswordScreenState extends State<PasswordScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF201C2C),
+        elevation: 0,
+      ),
       backgroundColor: const Color(0xFF201C2C),
       body: SingleChildScrollView(
         child: Container(
@@ -22,17 +25,12 @@ class _PasswordScreenState extends State<PasswordScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 100,
-              ),
-              Positioned(
-                child: const Text(
-                  "Sign In",
-                  style: TextStyle(
-                    fontFamily: 'CircularStd-Bold.ttf',
-                    color: Colors.white,
-                    fontSize: 40.0,
-                  ),
+              const Text(
+                "Sign In",
+                style: TextStyle(
+                  fontFamily: 'CircularStd-Bold.ttf',
+                  color: Colors.white,
+                  fontSize: 40.0,
                 ),
               ),
               const SizedBox(
@@ -135,6 +133,6 @@ class _PasswordScreenState extends State<PasswordScreen> {
           ),
         ),
       ),
-    ));
+    );
   }
 }
