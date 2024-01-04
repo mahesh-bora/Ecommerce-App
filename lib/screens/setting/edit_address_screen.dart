@@ -29,6 +29,7 @@ class EditAddressScreen extends StatelessWidget {
 
                     //address
                     TextFormField(
+                      style: const TextStyle(color: Colors.white),
                       cursorColor: Colors.white,
                       decoration: InputDecoration(
                         filled: true,
@@ -48,6 +49,7 @@ class EditAddressScreen extends StatelessWidget {
 
                     //city
                     TextFormField(
+                      style: const TextStyle(color: Colors.white),
                       cursorColor: Colors.white,
                       decoration: InputDecoration(
                         filled: true,
@@ -72,6 +74,7 @@ class EditAddressScreen extends StatelessWidget {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: TextFormField(
+                            style: const TextStyle(color: Colors.white),
                             cursorColor: Colors.white,
                             decoration: InputDecoration(
                               filled: true,
@@ -93,6 +96,7 @@ class EditAddressScreen extends StatelessWidget {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: TextFormField(
+                            style: const TextStyle(color: Colors.white),
                             cursorColor: Colors.white,
                             decoration: InputDecoration(
                               filled: true,

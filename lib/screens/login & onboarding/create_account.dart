@@ -12,8 +12,7 @@ class CreateAccountScreen extends StatefulWidget {
 class _CreateAccountScreenState extends State<CreateAccountScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       backgroundColor: const Color(0xFF201C2C),
       body: SingleChildScrollView(
         child: Container(
@@ -41,6 +40,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "First Name",
@@ -63,6 +63,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Last Name",
@@ -85,6 +86,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Email Address",
@@ -107,6 +109,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Password",
@@ -205,6 +208,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
           ),
         ),
       ),
-    ));
+    );
   }
 }

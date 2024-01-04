@@ -43,6 +43,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Password",
@@ -59,22 +60,21 @@ class _PasswordScreenState extends State<PasswordScreen> {
               const SizedBox(
                 height: 45,
               ),
-              Container(
-                height: 45,
-                decoration: const BoxDecoration(
-                    border: Border.symmetric(),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(100.0), // Adjust the radius as needed
-                    ),
-                    color: Color(0xFF8e6dee)),
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const FinalLogin()),
-                    );
-                  },
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const FinalLogin()),
+                  );
+                },
+                child: Container(
+                  height: 45,
+                  decoration: const BoxDecoration(
+                      border: Border.symmetric(),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(100.0), // Adjust the radius as needed
+                      ),
+                      color: Color(0xFF8e6dee)),
                   child: const Center(
                     child: Text(
                       "Continue",

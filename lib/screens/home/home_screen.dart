@@ -3,6 +3,7 @@ import 'package:ecommerce_app/screens/navpages/bookmark.dart';
 import 'package:ecommerce_app/screens/navpages/setting_page.dart';
 
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../navpages/shop_by_category.dart';
 
@@ -48,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  //Profile
                   GestureDetector(
                     onTap: () {
                       // Handle the tap event, for example, navigate to the profile screen
@@ -70,49 +72,51 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  Row(
-                    children: [
-                      Container(
-                        width: 100,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF342F3F),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: DropdownButton<String>(
-                          borderRadius: BorderRadius.circular(10.0),
-                          value: selectedGender,
-                          dropdownColor: const Color(0xFF342F3F),
-                          icon: const Icon(Icons.arrow_drop_down),
-                          iconSize: 24,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                          ),
-                          onChanged: (String? newValue) {
-                            setState(() {
-                              selectedGender = newValue!;
-                            });
-                          },
-                          items: <String>['Man', 'Woman']
-                              .map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(
-                                value,
-                                style: TextStyle(
-                                  color: value == selectedGender
-                                      ? Colors
-                                          .white // White color for selected item
-                                      : Colors
-                                          .white, // Default color for other items
-                                ),
-                              ),
-                            );
-                          }).toList(),
-                        ),
+
+                  //Dropdown button
+                  Container(
+                    width: 100,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF342F3F),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: DropdownButton<String>(
+                      underline: const SizedBox(),
+                      borderRadius: BorderRadius.circular(10.0),
+                      value: selectedGender,
+                      dropdownColor: const Color(0xFF342F3F),
+                      icon:
+                          const Icon(Iconsax.arrow_down_1, color: Colors.white),
+                      iconSize: 24,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
                       ),
-                    ],
+                      onChanged: (String? newValue) {
+                        setState(() {
+                          selectedGender = newValue!;
+                        });
+                      },
+                      items: <String>['Man', 'Woman']
+                          .map<DropdownMenuItem<String>>(
+                        (String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(
+                              value,
+                              style: TextStyle(
+                                color: value == selectedGender
+                                    ? Colors
+                                        .white // White color for selected item
+                                    : Colors
+                                        .white, // Default color for other items
+                              ),
+                            ),
+                          );
+                        },
+                      ).toList(),
+                    ),
                   ),
                   //Shopping cart
                   GestureDetector(
@@ -160,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ShopByCategory()),
+                              builder: (context) => const ShopByCategory()),
                         );
                       },
                       child: const Text("See All",
@@ -202,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ShopByCategory()),
+                              builder: (context) => const ShopByCategory()),
                         );
                       },
                       child: const Text("See All",
@@ -214,12 +218,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(
                 height: 300,
-                child: ListView.separated(
+                child: ListView.builder(
+                  shrinkWrap: true,
                   physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(width: 10), // Adjust spacing as needed
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
@@ -230,54 +233,54 @@ class _HomeScreenState extends State<HomeScreen> {
                                   const ProductDetailScreen()),
                         );
                       },
-                      child: Card(
-                        color: const Color(0xFF342F3F),
-                        elevation: 4,
-                        child: Column(
-                          children: [
-                            // Image with no bottom rounding
-                            ClipRRect(
-                                borderRadius: const BorderRadius.vertical(
-                                    top: Radius.circular(8.0)),
-                                child: Image.asset(
-                                  photos[index],
-                                  height: 150,
-                                  fit: BoxFit.cover,
-                                )
-                                // Image.network(
-                                //   product.imageUrl,
-                                //   height: 200,
-                                //   width: double.infinity,
-                                //   fit: BoxFit.cover,
-                                // ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Card(
+                          color: const Color(0xFF342F3F),
+                          elevation: 4,
+                          child: Column(
+                            children: [
+                              // Image with no bottom rounding
+                              Expanded(
+                                child: ClipRRect(
+                                  borderRadius: const BorderRadius.vertical(
+                                      top: Radius.circular(8.0)),
+                                  child: Image.asset(
+                                    photos[index],
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                            const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                                    height: 30,
-                                  ),
-                                  Text(
-                                    "Men's Harrington Jacket",
-                                    style: TextStyle(
-                                        fontFamily: 'CircularStd-Bold.ttf',
-                                        color: Colors.white,
-                                        fontSize: 16),
-                                  ),
-                                  Text(
-                                    '\$148.0',
-                                    style: TextStyle(
-                                        fontFamily: 'CircularStd-Bold.ttf',
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white),
-                                  ),
-                                ],
                               ),
-                            ),
-                          ],
+
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 30,
+                                    ),
+                                    Text(
+                                      softWrap: true,
+                                      "Men's Harrington Jacket",
+                                      style: TextStyle(
+                                          fontFamily: 'CircularStd-Bold.ttf',
+                                          color: Colors.white,
+                                          fontSize: 16),
+                                    ),
+                                    Text(
+                                      '\$148.0',
+                                      style: TextStyle(
+                                          fontFamily: 'CircularStd-Bold.ttf',
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );
@@ -299,7 +302,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ShopByCategory()),
+                              builder: (context) => const ShopByCategory()),
                         );
                       },
                       child: const Text("See All",
@@ -311,12 +314,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(
                 height: 300,
-                child: ListView.separated(
+                child: ListView.builder(
+                  shrinkWrap: true,
                   physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(width: 10), // Adjust spacing as needed
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
@@ -327,54 +329,54 @@ class _HomeScreenState extends State<HomeScreen> {
                                   const ProductDetailScreen()),
                         );
                       },
-                      child: Card(
-                        color: const Color(0xFF342F3F),
-                        elevation: 4,
-                        child: Column(
-                          children: [
-                            // Image with no bottom rounding
-                            ClipRRect(
-                                borderRadius: const BorderRadius.vertical(
-                                    top: Radius.circular(8.0)),
-                                child: Image.asset(
-                                  photos[index],
-                                  height: 150,
-                                  fit: BoxFit.cover,
-                                )
-                                // Image.network(
-                                //   product.imageUrl,
-                                //   height: 200,
-                                //   width: double.infinity,
-                                //   fit: BoxFit.cover,
-                                // ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                        child: Card(
+                          color: const Color(0xFF342F3F),
+                          elevation: 4,
+                          child: Column(
+                            children: [
+                              // Image with no bottom rounding
+                              Expanded(
+                                child: ClipRRect(
+                                  borderRadius: const BorderRadius.vertical(
+                                      top: Radius.circular(8.0)),
+                                  child: Image.asset(
+                                    photos[index],
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                            const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                                    height: 30,
-                                  ),
-                                  Text(
-                                    "Men's Harrington Jacket",
-                                    style: TextStyle(
-                                        fontFamily: 'CircularStd-Bold.ttf',
-                                        color: Colors.white,
-                                        fontSize: 16),
-                                  ),
-                                  Text(
-                                    '\$148.0',
-                                    style: TextStyle(
-                                        fontFamily: 'CircularStd-Bold.ttf',
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white),
-                                  ),
-                                ],
                               ),
-                            ),
-                          ],
+
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      height: 30,
+                                    ),
+                                    Text(
+                                      softWrap: true,
+                                      "Men's Harrington Jacket",
+                                      style: TextStyle(
+                                          fontFamily: 'CircularStd-Bold.ttf',
+                                          color: Colors.white,
+                                          fontSize: 16),
+                                    ),
+                                    Text(
+                                      '\$148.0',
+                                      style: TextStyle(
+                                          fontFamily: 'CircularStd-Bold.ttf',
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );

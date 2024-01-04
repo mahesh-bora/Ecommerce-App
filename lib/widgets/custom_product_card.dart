@@ -22,52 +22,46 @@ class ProductCard extends StatelessWidget {
         elevation: 4,
         child: Stack(
           children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Image with no bottom rounding
-                  ClipRRect(
-                      borderRadius: const BorderRadius.vertical(
-                          top: Radius.circular(8.0)),
-                      child: Image.asset(
-                        product.imageUrl,
-                        height: 150,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
-                      )
-                      // Image.network(
-                      //   product.imageUrl,
-                      //   height: 200,
-                      //   width: double.infinity,
-                      //   fit: BoxFit.cover,
-                      // ),
-                      ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          product.title,
-                          style: const TextStyle(
-                              fontFamily: 'CircularStd-Bold.ttf',
-                              color: Colors.white,
-                              fontSize: 16),
-                        ),
-                        Text(
-                          '\$${product.price}',
-                          style: const TextStyle(
-                              fontFamily: 'CircularStd-Bold.ttf',
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ],
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Image with no bottom rounding
+                Expanded(
+                  child: ClipRRect(
+                    borderRadius:
+                        const BorderRadius.vertical(top: Radius.circular(8.0)),
+                    child: Image.asset(
+                      product.imageUrl,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
                     ),
                   ),
-                ],
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 10.0, vertical: 15.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        product.title,
+                        style: const TextStyle(
+                            fontFamily: 'CircularStd-Bold.ttf',
+                            color: Colors.white,
+                            fontSize: 16),
+                      ),
+                      Text(
+                        '\$${product.price}',
+                        style: const TextStyle(
+                            fontFamily: 'CircularStd-Bold.ttf',
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
             // Favorite button in the top right corner
             Align(

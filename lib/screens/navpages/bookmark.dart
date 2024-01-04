@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/screens/navpages/mainpage.dart';
+import 'package:ecommerce_app/screens/navpages/shop_by_category.dart';
 import 'package:flutter/material.dart';
 
 class BookmarkScreen extends StatefulWidget {
@@ -62,7 +62,8 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MainPage()),
+                  MaterialPageRoute(
+                      builder: (context) => const ShopByCategory()),
                 );
               },
               child: const Center(
