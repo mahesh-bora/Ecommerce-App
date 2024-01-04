@@ -41,6 +41,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 borderRadius: BorderRadius.circular(4),
               ),
               child: TextFormField(
+                style: const TextStyle(color: Colors.white),
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: "Enter Email Address",

@@ -30,118 +30,97 @@ class _ShopByCategoryState extends State<ShopByCategory> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFF201C2C),
-        body: Container(
-          padding: const EdgeInsets.all(20),
-          // margin: EdgeInsets.symmetric(),
-          // padding: EdgeInsets.all(25),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(
-                height: 50,
-              ),
-              GestureDetector(
-                onTap: () {
-                  // Add your onTap functionality here
-                  Navigator.pop(context);
-                },
-                child: Container(
-                  width: 50.0,
-                  height: 50.0,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/back_button.png'),
-                    ),
+        elevation: 0,
+      ),
+      backgroundColor: const Color(0xFF201C2C),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                width: 50.0,
+                height: 50.0,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage('assets/back_button.png'),
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 25,
+            ),
+            const SizedBox(
+              height: 25,
+            ),
+            const Text(
+              "Shop By Categories",
+              style: TextStyle(
+                fontFamily: 'CircularStd-Bold.ttf',
+                color: Colors.white,
+                fontSize: 35.0,
               ),
-              const Text(
-                "Shop By Categories",
-                style: TextStyle(
-                  fontFamily: 'CircularStd-Bold.ttf',
-                  color: Colors.white,
-                  fontSize: 35.0,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProductGrid()),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProductGrid()),
+                );
+              },
+              child: ListView.separated(
+                physics: const BouncingScrollPhysics(),
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                itemCount: 5,
+                separatorBuilder: (context, index) =>
+                    const SizedBox(height: 5), // Adjust spacing as needed
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: Container(
+                      height: 70,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF342F3F),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              photoUrls[index],
+                              fit: BoxFit.cover,
+                              height: 50,
+                            ),
+                            const SizedBox(width: 20),
+                            Text(
+                              category[index],
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   );
                 },
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 0.5,
-                  margin: const EdgeInsets.only(),
-                  child: Flexible(
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Flexible(
-                          child: SizedBox(
-                            height:
-                                500, // Set a fixed height or adjust as needed
-                            child: ListView.separated(
-                              physics: const BouncingScrollPhysics(),
-                              shrinkWrap: true,
-                              scrollDirection: Axis.vertical,
-                              itemCount: 5,
-                              separatorBuilder: (context, index) =>
-                                  const SizedBox(
-                                      height: 5), // Adjust spacing as needed
-                              itemBuilder: (context, index) {
-                                return Container(
-                                  width: 200,
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10),
-                                  margin:
-                                      const EdgeInsets.symmetric(vertical: 10),
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFF342F3F),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Image.asset(
-                                        photoUrls[index],
-                                        fit: BoxFit.cover,
-                                        height: 50,
-                                      ),
-                                      const SizedBox(width: 20),
-                                      Text(
-                                        category[index],
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

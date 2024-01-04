@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/screens/navpages/mainpage.dart';
+import 'package:ecommerce_app/screens/navpages/shop_by_category.dart';
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatefulWidget {
@@ -19,8 +19,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
           const SizedBox(
             height: 30,
           ),
-          Center(
-            child: const Text("Notification",
+          const Center(
+            child: Text("Notification",
                 style: TextStyle(
                     fontSize: 20,
                     color: Colors.white,
@@ -60,7 +60,8 @@ class _NotificationScreenState extends State<NotificationScreen> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MainPage()),
+                  MaterialPageRoute(
+                      builder: (context) => const ShopByCategory()),
                 );
               },
               child: const Center(

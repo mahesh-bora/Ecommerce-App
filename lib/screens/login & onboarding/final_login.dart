@@ -41,20 +41,14 @@ class _FinalLoginState extends State<FinalLogin> {
                   const SizedBox(
                     height: 30,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF342F3F),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: const Text(
-                      'Who do you shop for?',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontFamily: 'Circular Std',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
-                      ),
+                  const Text(
+                    'Who do you shop for?',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontFamily: 'Circular Std',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
                     ),
                   ),
                   const SizedBox(
@@ -122,22 +116,16 @@ class _FinalLoginState extends State<FinalLogin> {
                     ],
                   ),
                   const SizedBox(
-                    height: 50,
+                    height: 30,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF342F3F),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: const Text(
-                      'How old are you?',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontFamily: 'Circular Std',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
-                      ),
+                  const Text(
+                    'How old are you?',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontFamily: 'Circular Std',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
                     ),
                   ),
                   const SizedBox(
@@ -177,37 +165,38 @@ class _FinalLoginState extends State<FinalLogin> {
                   const SizedBox(
                     height: 25,
                   ),
-                  Container(
-                    height: 45,
-                    decoration: BoxDecoration(
-                      border: Border.all(),
-                      borderRadius: BorderRadius.circular(100.0),
-                      color: const Color(0xFF8e6dee),
-                    ),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const MainPage()),
-                        );
-                      },
-                      child: const Center(
-                        child: Text(
-                          "Finish",
-                          style: TextStyle(
-                            fontFamily: 'CircularStd-Bold',
-                            color: Colors.white,
-                            fontSize: 20.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),
           ],
+        ),
+        bottomNavigationBar: BottomAppBar(
+          color: const Color(0xFF342F3F),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const MainPage()),
+              );
+            },
+            child: Container(
+              height: 45,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(100.0),
+                color: const Color(0xFF8e6dee),
+              ),
+              child: const Center(
+                child: Text(
+                  "Finish",
+                  style: TextStyle(
+                    fontFamily: 'CircularStd-Bold',
+                    color: Colors.white,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );

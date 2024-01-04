@@ -255,6 +255,8 @@ class _CartScreenState extends State<CartScreen> {
                                   ),
                                   Expanded(
                                     child: TextField(
+                                      style:
+                                          const TextStyle(color: Colors.white),
                                       decoration: InputDecoration(
                                         hintStyle: TextStyle(
                                           fontFamily: 'CircularStd-Bold',
