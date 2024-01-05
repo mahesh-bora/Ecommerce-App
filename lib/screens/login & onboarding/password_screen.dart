@@ -62,7 +62,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => const FinalLogin()),
                   );
