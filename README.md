@@ -18,7 +18,10 @@ Key Features:
 ## App Demo
 
 
-https://github.com/mahesh-bora/ecommerce_app/assets/101460679/ce68b197-df67-4098-887e-d26c9739e865
+
+https://github.com/mahesh-bora/ecommerce_app/assets/101460679/109fe277-2cdc-44e9-b659-55ae648fca53
+
+
 
 
 
